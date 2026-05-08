@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<TableSelectDialog items="{path: 'jsonMessageDetailsModel>/'}" noDataText="No Data" liveChange="onSearchMessageDetails" title="Message Details"
+		confirm="onConfirm" contentWidth="60%">
+		<columns>
+			<Column hAlign="Center">
+				<Label design="Bold" text="Type"/>
+			</Column>
+			<Column hAlign="Center">
+				<Label text="Id" design="Bold"/>
+			</Column>
+            <Column hAlign="Center">
+				<Label design="Bold" text="Number"/>
+			</Column>
+			<Column hAlign="Center">
+				<Label text="Message" design="Bold"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+                    <Text text="{jsonMessageDetailsModel>Type}"/>
+					<Text text="{jsonMessageDetailsModel>Id}"/>
+					<Text text="{jsonMessageDetailsModel>Number}"/>
+                    <Text text="{jsonMessageDetailsModel>Message}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</TableSelectDialog>
+</core:FragmentDefinition>
