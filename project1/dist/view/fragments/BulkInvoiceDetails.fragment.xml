@@ -1,0 +1,47 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+    <Dialog
+        id="idDialog"
+        title="Sales Order Details"
+        contentHeight="65%"
+        contentWidth="50%"
+    >
+        <Table items="{path: 'jsonBulkInvoiceDetailsModel>/'}">
+            <columns>
+                <Column hAlign="Center">
+                    <Label
+                        design="Bold"
+                        text="Sale Order No"
+                    />
+                </Column>
+                <Column hAlign="Center">
+                    <Label
+                        text="Invoice No"
+                        design="Bold"
+                    />
+                </Column>
+                <Column hAlign="Center">
+                    <Label
+                        text="Success or Error"
+                        design="Bold"
+                    />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Navigation" press="onPressLineItem">
+                    <Text text="{jsonBulkInvoiceDetailsModel>Order}" />
+                    <Text text="{jsonBulkInvoiceDetailsModel>Invoice}" />
+                    <Text text="{jsonBulkInvoiceDetailsModel>Type}" />
+                </ColumnListItem>
+            </items>
+        </Table>
+        <buttons>
+            <Button
+                text="Cancel"
+                press="onCloseBulkInvoiceDetailsDialog"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

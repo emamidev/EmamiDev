@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZSD_CDMS_BULK_BILLING_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="BulkInvoice" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Action"/>
+                </Key>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Action" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="SoDetails" Relationship="ZSD_CDMS_BULK_BILLING_SRV.BulkInvoiceAssSaleOrder" FromRole="FromRole_BulkInvoiceAssSaleOrder" ToRole="ToRole_BulkInvoiceAssSaleOrder"/>
+            </EntityType>
+            <EntityType Name="SaleOrder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Order"/>
+                </Key>
+                <Property Name="Order" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invoice" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Billing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Message" Relationship="ZSD_CDMS_BULK_BILLING_SRV.SaleOrderAssMessageType" FromRole="FromRole_SaleOrderAssMessageType" ToRole="ToRole_SaleOrderAssMessageType"/>
+            </EntityType>
+            <EntityType Name="MessageType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Type"/>
+                    <PropertyRef Name="Message"/>
+                </Key>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Message Class" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Message number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="Message text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Log Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Message Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parameter" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Parameter Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Row" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Parameter line" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Field" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Field name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="System" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Logical system" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="BulkInvoiceAssSaleOrder" sap:content-version="1">
+                <End Type="ZSD_CDMS_BULK_BILLING_SRV.BulkInvoice" Multiplicity="1" Role="FromRole_BulkInvoiceAssSaleOrder"/>
+                <End Type="ZSD_CDMS_BULK_BILLING_SRV.SaleOrder" Multiplicity="*" Role="ToRole_BulkInvoiceAssSaleOrder"/>
+            </Association>
+            <Association Name="SaleOrderAssMessageType" sap:content-version="1">
+                <End Type="ZSD_CDMS_BULK_BILLING_SRV.SaleOrder" Multiplicity="1" Role="FromRole_SaleOrderAssMessageType"/>
+                <End Type="ZSD_CDMS_BULK_BILLING_SRV.MessageType" Multiplicity="*" Role="ToRole_SaleOrderAssMessageType"/>
+            </Association>
+            <EntityContainer Name="ZSD_CDMS_BULK_BILLING_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="BulkInvoiceSet" EntityType="ZSD_CDMS_BULK_BILLING_SRV.BulkInvoice" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SaleOrderSet" EntityType="ZSD_CDMS_BULK_BILLING_SRV.SaleOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MessageTypeSet" EntityType="ZSD_CDMS_BULK_BILLING_SRV.MessageType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="BulkInvoiceAssSaleOrder_AssocSet" Association="ZSD_CDMS_BULK_BILLING_SRV.BulkInvoiceAssSaleOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="BulkInvoiceSet" Role="FromRole_BulkInvoiceAssSaleOrder"/>
+                    <End EntitySet="SaleOrderSet" Role="ToRole_BulkInvoiceAssSaleOrder"/>
+                </AssociationSet>
+                <AssociationSet Name="SaleOrderAssMessageType_AssocSet" Association="ZSD_CDMS_BULK_BILLING_SRV.SaleOrderAssMessageType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SaleOrderSet" Role="FromRole_SaleOrderAssMessageType"/>
+                    <End EntitySet="MessageTypeSet" Role="ToRole_SaleOrderAssMessageType"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://emsygydev.emami.local:8000/sap/opu/odata/sap/ZSD_CDMS_BULK_BILLING_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://emsygydev.emami.local:8000/sap/opu/odata/sap/ZSD_CDMS_BULK_BILLING_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

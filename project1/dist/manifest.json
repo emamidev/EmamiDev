@@ -1,0 +1,104 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "com.arteriatech.ss.soinvcreate.cp.zsssoinvcreate0cp",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{common.appTitle}}",
+		"i18n": "i18n/i18n.properties",
+		"sourceTemplate": {
+			"id": "@sap/ux-app-migrator:freestyle",
+			"version": "1.17.2",
+			"toolsId": "ec8064a7-6719-49b7-b479-8de509694c31"
+		},
+		"dataSources": {
+			"bulkBillingService": {
+				"uri": "/sap/opu/odata/sap/ZSD_CDMS_BULK_BILL_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"localUri": "localService/mainService/metadata.xml",
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "/sap/bc/ui5_ui5/artec/ssutil/utils/img/fevicon.ico",
+			"favIcon": "/sap/bc/ui5_ui5/artec/ssutil/utils/img/fevicon.ico"
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"dependencies": {
+			"minUI5Version": ""
+		},
+		"extends": {
+			"component": "com.arteriatech.ss.soinvcreate.cp",
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"com.arteriatech.ss.soinvcreate.cp.controller.List": {
+						"controllerName": "com.arteriatech.ss.soinvcreate.cp.zsssoinvcreate0cp.controller.ListCustom"
+					},
+					"com.arteriatech.ss.soinvcreate.cp.controller.SOList": {
+						"controllerName": "com.arteriatech.ss.soinvcreate.cp.zsssoinvcreate0cp.controller.SOListCustom"
+					}
+				},
+				"sap.ui.viewReplacements": {
+					"com.arteriatech.ss.soinvcreate.cp.view.List": {
+						"viewName": "com.arteriatech.ss.soinvcreate.cp.zsssoinvcreate0cp.view.ListCustom",
+						"type": "XML"
+					},
+					"com.arteriatech.ss.soinvcreate.cp.view.SOList": {
+						"viewName": "com.arteriatech.ss.soinvcreate.cp.zsssoinvcreate0cp.view.SOListCustom",
+						"type": "XML"
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.arteriatech.ss.soinvcreate.cp.zsssoinvcreate0cp.i18n.i18n"
+				}
+			},
+			"bulkBillingService": {
+				"dataSource": "bulkBillingService",
+				"preload": true,
+				"settings": {}
+			},
+			"jsonBulkInvoiceDetailsModel": {
+				"preload": true,
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"jsonMessageDetailsModel": {
+				"preload": true,
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"flexBundle": false
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}
