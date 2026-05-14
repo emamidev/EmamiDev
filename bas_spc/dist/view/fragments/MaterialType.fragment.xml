@@ -1,0 +1,102 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Material Type"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <m:FlexBox
+                        direction="Row"
+                        alignItems="Center"
+                        justifyContent="Center"
+                        wrap="Wrap"
+                    >
+                        <m:VBox class="sapUiSmallMarginBegin">
+                            <m:GenericTile
+                                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                header="PM"
+                                subheader="Packaging Material"
+                                press="onPressPackagingMaterial"
+                            >
+                                <m:TileContent
+                                    unit=""
+                                    footer=""
+                                >
+                                    <m:ImageContent
+                                        src="{ path: 'jsonCentralModel>/logo/pm',
+                                                formatter: '.formatter.materialLogo'
+                                            }"
+                                    />
+                                </m:TileContent>
+                            </m:GenericTile>
+                        </m:VBox>
+
+                        <m:VBox class="sapUiSmallMarginBegin">
+                            <m:GenericTile
+                                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                header="FG"
+                                subheader="Finished Goods"
+                                press="onPressFinishedGoods"
+                            >
+                                <m:TileContent
+                                    unit=""
+                                    footer=""
+                                >
+                                    <m:ImageContent
+                                        src="{ path: 'jsonCentralModel>/logo/fg',
+                                                formatter: '.formatter.materialLogo'
+                                            }"
+                                    />
+                                </m:TileContent>
+                            </m:GenericTile>
+                        </m:VBox>
+
+                        <m:VBox class="sapUiSmallMarginBegin">
+                            <m:GenericTile 
+                                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                header="RM"
+                                subheader="Raw Material"
+                                press="onPressRawMaterial"
+                            >
+                                <m:TileContent
+                                    unit=""
+                                    footer=""
+                                >
+                                    <m:ImageContent
+                                        src="{ path: 'jsonCentralModel>/logo/rm',
+                                                formatter: '.formatter.materialLogo'
+                                            }"
+                                    />
+                                </m:TileContent>
+                            </m:GenericTile>
+                        </m:VBox>
+                        <m:VBox class="sapUiSmallMarginBegin">
+                            <m:GenericTile
+                                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                header="Perfume"
+                                subheader="Perfume Material"
+                                press="onPressPerfumeMaterial"
+                            >
+                                <m:TileContent
+                                    unit=""
+                                    footer=""
+                                >
+                                    <m:ImageContent
+                                         src="{ path: 'jsonCentralModel>/logo/perfume',
+                                                formatter: '.formatter.materialLogo'
+                                            }"
+                                    />
+                                </m:TileContent>
+                            </m:GenericTile>
+                        </m:VBox>
+                    </m:FlexBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

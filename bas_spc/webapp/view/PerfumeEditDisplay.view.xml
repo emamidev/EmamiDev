@@ -1,0 +1,115 @@
+<mvc:View
+    controllerName="com.emami.spc.controller.PerfumeEditDisplay"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    height="100%" 
+>
+    <ObjectPageLayout
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false" 
+        showFooter="true"
+    >
+        <headerTitle>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.HomeHeaderTitle"
+                type="XML"
+            />
+        </headerTitle>
+
+        <headerContent> 
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeHeader"
+                type="XML"
+            />
+        </headerContent>
+
+        <sections> 
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeStorageCondition"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeTable"
+                type="XML"
+            />
+            <!-- <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeAdditionalInfo"
+                type="XML"
+            /> -->
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeRevisionLog"
+                type="XML"
+            /><core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeApprovedManufacturer"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeApprovedVendors"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeLog"
+                type="XML"
+            />
+           
+        </sections>
+
+        <footer>
+            <m:Bar visible="{jsonCentralModel>/PerfumeMaterial/Visible/BarVisible}" >
+                <m:contentMiddle>
+                    <m:Button
+                        text="Save"
+                        type="Emphasized"
+                        press="onPressSave"
+                         visible="{jsonCentralModel>/PerfumeMaterial/Visible/SaveBtn}"
+                    />
+                    <m:Button
+                        text="Accept" 
+                        type="Emphasized"
+                        press="onPressAccept"
+                         visible="{jsonCentralModel>/PerfumeMaterial/Visible/AcceptBtn}"
+                    />
+                    <m:Button 
+                        text="Reject"
+                        type="Emphasized"
+                        press="onPressReject"
+                        visible="{jsonCentralModel>/PerfumeMaterial/Visible/RejectBtn}"
+                    />
+                    <m:Button
+                        text="Initiate Approval"
+                        type="Emphasized"
+                        press="onPressInitiateApproval"
+                        visible="{jsonCentralModel>/PerfumeMaterial/Visible/InitiateBtn}"
+                    />
+                    <m:Button
+                        text="Delete"
+                        type="Reject"
+                        press="onPressDelete"
+                        visible="{jsonCentralModel>/PerfumeMaterial/Visible/DeleteBtn}"
+                    />
+                    <m:Button
+                        text="Print"
+                        type="Emphasized"
+                        press="onPressPrint"
+                        visible="{jsonCentralModel>/PerfumeMaterial/Visible/PrintBtn}"
+                    />
+                    <m:Button
+                        text="Create Reference"
+                        type="Emphasized"
+                        press="onPressCreateReference"
+                        visible="{jsonCentralModel>/PerfumeMaterial/Visible/CreateReferenceBtn}"
+                    />
+                     <m:Button
+                        text="Create Task List"
+                        type="Emphasized"
+                        press="onPressCreateTaskList"
+                        visible="{jsonCentralModel>/PerfumeMaterial/Visible/CreateTaskListBtn}"
+                    />
+                </m:contentMiddle>
+            </m:Bar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

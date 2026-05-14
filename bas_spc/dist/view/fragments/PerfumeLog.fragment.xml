@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Log"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <m:TextArea
+                        editable="false"
+                        width="100%"
+                        growing="true"
+                        value="{jsonCentralModel>/PerfumeMaterial/Data/Log}"
+                    />
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

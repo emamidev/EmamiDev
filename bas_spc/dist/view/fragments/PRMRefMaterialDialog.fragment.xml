@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog
+        id="idRMRefMaterialDialog"
+        title="Confirm"
+        contentHeight="25%"
+        contentWidth="20%"
+    >
+        <HBox>
+            <RadioButtonGroup
+                id="idRMRadioBtnGroup"
+                select="onChangeRadioBtn"
+            >
+                <RadioButton
+                    text="Without Reference Material"
+                    selected="true"
+                />
+                <RadioButton text="With Reference Material" />
+            </RadioButtonGroup>
+        </HBox>
+        <HBox> 
+            <Input
+                id="idInputPRMRefMatnr"
+                editable="false"
+                valueHelpRequest="onPRMRefMatnrValueHelpReq"
+                showValueHelp="true"
+                class="sapUiMediumMarginBegin"
+            />
+        </HBox>
+         <HBox>
+             <Input
+                id="idInputPRMRefVersion"
+                editable="false"
+                class="sapUiMediumMarginBegin"
+            />
+        </HBox>
+        <buttons>
+            <Button
+                text="Confirm"
+                type="Emphasized"
+                press="onConfirmRMRefMaterialDialog"
+            />
+            <Button
+                text="Cancel"
+                press="onCancelRMRefMaterialDialog"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

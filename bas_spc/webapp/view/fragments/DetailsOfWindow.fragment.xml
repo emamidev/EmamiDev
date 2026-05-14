@@ -1,0 +1,89 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+
+ <ObjectPageSection
+                titleUppercase="false"
+                title="Details Of Window"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Select
+                                     selectedKey="{jsonCentralModel>/Data/DetailsofWindow/Detwn}"
+                                    width="5rem"
+                                    enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                >
+                                    <m:items>
+                                        <core:Item
+                                            key="Yes"
+                                            text="Yes"
+                                        />
+                                        <core:Item
+                                            key="NA"
+                                            text="NA"
+                                        />
+                                        <core:Item
+                                            key=""
+                                            text=""
+                                        />
+                                    </m:items>
+                                </m:Select>
+
+                                <m:Select
+                                     selectedKey="{jsonCentralModel>/Data/DetailsofWindow/Gsm}"
+                                    width="8rem"
+                                    class="sapUiMediumMarginBegin"
+                                    enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                >
+                                    <m:items>
+                                        <core:Item
+                                            key="100µ"
+                                            text="100µ"
+                                        />
+                                        <core:Item
+                                            key="150µ"
+                                            text="150µ"
+                                        />
+                                        <core:Item
+                                            key="200µ"
+                                            text="200µ"
+                                        />
+                                        <core:Item
+                                            key=""
+                                            text=""
+                                        />
+                                    </m:items>
+                                </m:Select>
+
+                                <m:Select
+                                     selectedKey="{jsonCentralModel>/Data/DetailsofWindow/Petpvc}"
+                                    width="6rem"
+                                    class="sapUiMediumMarginBegin"
+                                    enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                >
+                                    <m:items>
+                                        <core:Item
+                                            key="PET"
+                                            text="PET"
+                                        />
+                                        <core:Item
+                                            key="PVC"
+                                            text="PVC"
+                                        />
+                                        <core:Item
+                                            key=""
+                                            text=""
+                                        />
+                                    </m:items>
+                                </m:Select>
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            
+</core:FragmentDefinition>

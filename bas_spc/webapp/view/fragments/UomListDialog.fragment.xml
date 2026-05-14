@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <TableSelectDialog items="{jsonUomListModel>/}" noDataText="No Data" liveChange="onSearchUomListDialog" title="Tests" confirm="onPressUomLineItem" contentWidth="60%">
+        <columns>
+            <Column>
+                <header>
+                    <Text text="Unit" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="Description" />
+                </header>
+            </Column>
+        </columns>
+        <ColumnListItem>
+        
+            <cells>
+                <Text text="{jsonUomListModel>Msehi}" />
+            </cells>
+            <cells>
+                <Text text="{jsonUomListModel>Msehl}" />
+            </cells>
+        </ColumnListItem>
+    </TableSelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,89 @@
+<!-- <core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+>
+    <ObjectPageDynamicHeaderTitle>
+        <content>
+            <l:Splitter>
+                <m:Image
+                    src="{ path: '',
+                                   formatter: '.formatter.logo'
+                                }"
+                    height="4rem"
+                    width="5rem"
+                    press="onPressHome"
+                >
+                    <m:layoutData>
+                        <l:SplitterLayoutData
+                            size="375px"
+                            resizable="false"
+                        />
+                    </m:layoutData>
+                </m:Image>
+
+                <m:Title
+                    width="100%"
+                    text="{jsonCentralModel>/AppTitle}"
+                    titleStyle="H4"
+                >
+                    <m:layoutData>
+                        <l:SplitterLayoutData size="600px" />
+                    </m:layoutData>
+                </m:Title>
+            </l:Splitter>
+        </content>
+    </ObjectPageDynamicHeaderTitle>
+</core:FragmentDefinition> -->
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+>
+    <ObjectPageDynamicHeaderTitle>
+        <content>
+            <m:HBox>
+                <m:VBox> 
+                    <m:Image
+                         src="{ path: 'jsonCentralModel>/logo/emami',
+                                                formatter: '.formatter.logo'
+                                            }"
+                        height="6rem"
+                        width="7rem"
+                        press="onPressHome" 
+                    />
+                </m:VBox>
+                <m:VBox>
+                    <m:FlexBox
+                        justifyContent="Center"
+                        alignItems="Center"
+                        height="100%"
+                        class="sapUiResponsiveMargin"
+                    >
+                        <m:items>
+                            <m:Title
+                                text="{jsonCentralModel>/AppTitle}"
+                                wrapping="true"
+                                titleStyle="H4"
+                            />
+                        </m:items>
+                    </m:FlexBox>
+
+                    <!-- <m:FlexBox
+                        height="100px"
+                        alignItems="Center"
+                        justifyContent="Center"
+                    >
+                        <m:Title
+                            text="{jsonCentralModel>/AppTitle}"
+                            wrapping="true"
+                            titleStyle="H4"
+                        />
+                    </m:FlexBox> -->
+                </m:VBox>
+            </m:HBox>
+        </content>
+    </ObjectPageDynamicHeaderTitle>
+</core:FragmentDefinition>

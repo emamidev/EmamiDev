@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+
+  <ObjectPageSection
+                titleUppercase="false"
+                title="Instruction Of Varnish At Batch Coding Area"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Select
+                                     selectedKey="{jsonCentralModel>/Data/InstructionOfVarnish/Vernish}"
+                                    width="20rem"
+                                    enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                >
+                                    <m:items>
+                                        <core:Item
+                                            key="No Varnish"
+                                            text="No Varnish"
+                                        />
+                                        <core:Item
+                                            key="Aqua Varish"
+                                            text="Aqua Varish"
+                                        />
+                                        <core:Item
+                                            key="Double Aqua Varnish"
+                                            text="Double Aqua Varnish"
+                                        />
+                                        <core:Item
+                                            key="Gloss UV"
+                                            text="Gloss UV"
+                                        />
+                                        <core:Item
+                                            key="Matt UV"
+                                            text="Matt UV"
+                                        />
+                                        <core:Item
+                                            key="Gloss UV without Shimearing Varnish"
+                                            text="Gloss UV without Shimearing Varnish"
+                                        />
+                                        <core:Item
+                                            key=""
+                                            text=""
+                                        />
+                                    </m:items>
+                                </m:Select>
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            
+</core:FragmentDefinition>

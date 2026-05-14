@@ -1,0 +1,104 @@
+{
+    "AppTitle": "Material Specification",
+    "UserInfo": {},
+    "UserType": "",
+    "logo": {
+        "perfume": "perfume",
+        "pm": "PM",
+        "fg": "FG",
+        "rm": "RM",
+        "emami":"EM"
+    },
+    "Home": {
+        "SelectedMaterialCode": "",
+        "SelectedMaterialText": "",
+        "EnableDisableCreate": false,
+        "VisibleCreateBtn": false,
+        "FromDate" : null,
+        "ToDate" : null
+
+    },
+    "PackagingMaterial": {
+        "Data": {},
+        "Editable": {
+            "All": false,
+            "Matnr": false,
+            "Maktx": false,
+            "Versn": true
+        },
+        "Visible": {
+            "SaveBtn": false,
+            "CreateReferenceBtn": false,
+            "AcceptBtn": false,
+            "RejectBtn": false,
+            "InitiateBtn": false,
+            "DeleteBtn": false,
+            "PrintBtn": false,
+            "BarVisible": true,
+            "CreateTaskListBtn" : false
+        },
+        "SelectedTargetPath": "",
+        "SelectedUnitPath" : "",
+
+        "PMDateChange" : {
+            "IssueDate" : false,
+            "EffctDate" : false
+        }
+    },
+    "RawMaterial": {
+        "Data": {},
+        "Editable": {
+            "All": false,
+            "Matnr": false,
+            "Maktx": false,
+            "Versn": true
+        },
+        "Visible": {
+            "SaveBtn": false,
+            "CreateReferenceBtn": false,
+            "AcceptBtn": false,
+            "RejectBtn": false,
+            "InitiateBtn": false,
+            "PrintBtn": false,
+            "BarVisible": true,
+            "CreateTaskListBtn" :  false
+        },
+        "Remarks": "",
+        "ButtonSubmit": false,
+        "SelectedTestPath": "",
+
+        "RMDateChange" : {
+            "EffctDate" : false,
+            "PerpDate" : false,
+            "NextReview" : false
+        }
+    },
+    "PerfumeMaterial":{
+        "Data": {},
+        "Editable": {
+            "All": false,
+            "Matnr": false,
+            "Maktx": false,
+            "Versn": true
+        },
+        "Visible": {
+            "SaveBtn": false,
+            "CreateReferenceBtn": false,
+            "AcceptBtn": false,
+            "RejectBtn": false,
+            "InitiateBtn": false,
+            "PrintBtn": false,
+            "BarVisible": true,
+            "CreateTaskListBtn" :  false
+        },
+        "Remarks": "",
+        "ButtonSubmit": false,
+        "SelectedTestPath": "",
+
+        "PRMDateChange" : {
+            "EffctDate" : false,
+            "PerpDate" : false,
+            "NextReview" : false
+        }
+    }
+}

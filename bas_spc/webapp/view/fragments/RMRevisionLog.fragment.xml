@@ -1,0 +1,97 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:ui="sap.ui.table"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Revision Log"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+<!--                     
+                    <m:Table
+                        items="{jsonCentralModel>/RawMaterial/Data/RevisionLog/results}"
+                        popinLayout="GridSmall"
+                        sticky="ColumnHeaders"
+                    >
+                        <m:columns>
+                            <m:Column width="8rem">
+                                <m:Text text="Revision/Version No" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Reason for revision" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Revision Date" />
+                            </m:Column>
+                            
+                        </m:columns>
+
+                        <m:items>
+                            <m:ColumnListItem>
+                                <m:cells>
+                                    <m:Input value="{jsonCentralModel>Versn}" editable="{jsonCentralModel>Editable}" />
+                                    <m:TextArea value="{jsonCentralModel>Revlg}"  editable="{jsonCentralModel>Editable}" height="4rem" width="30rem"/>
+                                    <m:DatePicker  width="10rem" value="{ path : 'jsonCentralModel>Revdt' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"  editable="{jsonCentralModel>Editable}" />
+                                </m:cells>
+                            </m:ColumnListItem>
+                        </m:items>
+                    </m:Table> -->
+                    <ui:Table
+                        rows="{jsonCentralModel>/RawMaterial/Data/RevisionLog/results}"
+                        selectionMode="None"
+                        paste="onPaste"
+                        ariaLabelledBy="title"
+                        visibleRowCount="5"
+                    >
+                    <ui:extension>
+                            <m:OverflowToolbar style="Clear">
+                                <m:ToolbarSpacer />
+                                <m:Button
+                                    press="onAddRevisionItem"
+                                    icon="sap-icon://add"
+                                    type="Accept"
+                                    visible="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                />
+                            </m:OverflowToolbar>
+                        </ui:extension>
+                        <ui:columns>
+                            <ui:Column width="10rem">
+                                <m:Label text="Revision/Version No" />
+                                <ui:template>
+                                    <m:Input value="{jsonCentralModel>Versn}" editable="{jsonCentralModel>Editable}" />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="40rem">
+                                <m:Label text="Reason for revision" />
+                                <ui:template>
+                                    <m:TextArea value="{jsonCentralModel>Revlg}"  editable="{jsonCentralModel>Editable}" height="4rem" width="30rem"/>
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="12rem">
+                                <m:Label text="Revision Date" />
+                                <ui:template>
+                                    <m:DatePicker change="onChangeRMRevisionDate" width="10rem" value="{ path : 'jsonCentralModel>Revdt' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"  editable="{jsonCentralModel>Editable}" />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem" visible="{jsonCentralModel>/RawMaterial/Editable/All}">
+                                <m:Label text="Remove" />
+                                <ui:template>
+                                    <m:Button
+                                        press="onDeleteRevision"
+                                        icon="sap-icon://delete"
+                                        type="Reject"
+                                        
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                        </ui:columns>
+                    </ui:Table>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

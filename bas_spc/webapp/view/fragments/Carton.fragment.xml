@@ -1,0 +1,137 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Carton"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <m:HBox>
+                        <m:Text text="Type of Carton" />
+                        <m:Select
+                            selectedKey="{jsonCentralModel>/Data/Carton/Typecar}"
+                            width="10rem"
+                            class="sapUiSmallMarginBegin"
+                            change="onChangeTypeofCarton"
+                            enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                        >
+                            <m:items>
+                                <core:Item
+                                    key="Reverse Tuck In(RTI) Carton"
+                                    text="Reverse Tuck In(RTI) Carton"
+                                />
+                                <core:Item
+                                    key="Straight Tuck In  Carton"
+                                    text="Straight Tuck In  Carton"
+                                />
+                                <core:Item
+                                    key="Crash Lock Bottom Carton"
+                                    text="Crash Lock Bottom Carton"
+                                />
+                                <core:Item
+                                    key="Snap Lock Bottom  Carton"
+                                    text="Snap Lock Bottom  Carton"
+                                />
+                                <core:Item
+                                    key="Envelope"
+                                    text="Envelope"
+                                />
+                                <core:Item
+                                    key="Gift Pack"
+                                    text="Gift Pack"
+                                />
+                                <core:Item
+                                    key="Wrap Arround"
+                                    text="Wrap Arround"
+                                />
+                                <core:Item
+                                    key=""
+                                    text=""
+                                />
+                            </m:items>
+                        </m:Select>
+
+                        <m:Text
+                            text="Tuck In Flap width :"
+                            class="sapUiMediumMarginBegin"
+                        />
+                        <m:Select
+                            selectedKey="{jsonCentralModel>/Data/Carton/Tuflwd}"
+                            width="7rem"
+                            class="sapUiSmallMarginBegin"
+                            enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                        >
+                            <m:items>
+                                <core:Item
+                                    key="8mm"
+                                    text="8mm"
+                                />
+                                <core:Item
+                                    key="10mm"
+                                    text="10mm"
+                                />
+                                <core:Item
+                                    key="12mm"
+                                    text="12mm"
+                                />
+                                <core:Item
+                                    key="15mm"
+                                    text="15mm"
+                                />
+                                <core:Item
+                                    key=">15mm"
+                                    text=">15mm"
+                                />
+                                <core:Item
+                                    key=""
+                                    text=""
+                                />
+                            </m:items>
+                        </m:Select>
+                        <m:Text
+                            text="Gluing Flap width :"
+                            class="sapUiMediumMarginBegin"
+                        />
+                        <m:Select
+                             selectedKey="{jsonCentralModel>/Data/Carton/Guflwd}"
+                            width="7rem"
+                            class="sapUiSmallMarginBegin"
+                            enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                        >
+                            <m:items>
+                                <core:Item
+                                    key="8mm"
+                                    text="8mm"
+                                />
+                                <core:Item
+                                    key="10mm"
+                                    text="10mm"
+                                />
+                                <core:Item
+                                    key="12mm"
+                                    text="12mm"
+                                />
+                                <core:Item
+                                    key="15mm"
+                                    text="15mm"
+                                />
+                                <core:Item
+                                    key=">15mm"
+                                    text=">15mm"
+                                />
+                                <core:Item
+                                    key=""
+                                    text=""
+                                />
+                            </m:items>
+                        </m:Select>
+                    </m:HBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

@@ -1,0 +1,125 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Material"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <m:HBox>
+                        <m:Text text="Material Details" />
+                        <m:Input
+                            value="{jsonCentralModel>/Data/Material/Matdet}"
+                            maxLength="100"
+                            editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                            class="sapUiSmallMarginBegin"
+                        />
+                        <m:Text text="gsm" 
+                            class="sapUiMediumMarginBegin" 
+                            />
+                        <m:Input
+                            value="{jsonCentralModel>/Data/Material/Gsmdet}"
+                            maxLength="100"
+                            class="sapUiSmallMarginBegin"
+                            editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                        />
+                        <!-- <m:Select
+                            selectedKey="Emami"
+                            width="7rem"
+                            class="sapUiSmallMarginBegin"
+                        >
+                            <m:items>
+                                <core:Item
+                                    key="Emami"
+                                    text="Emami"
+                                />
+                                <core:Item
+                                    key="ITC"
+                                    text="ITC"
+                                />
+                                <core:Item
+                                    key="Gayatri"
+                                    text="Gayatri"
+                                />
+                                <core:Item
+                                    key="NR"
+                                    text="NR"
+                                />
+                                <core:Item
+                                    key="JK"
+                                    text="JK"
+                                />
+                                <core:Item
+                                    key=""
+                                    text=""
+                                />
+                            </m:items>
+                        </m:Select> -->
+                        <m:Select
+                             selectedKey="{jsonCentralModel>/Data/Material/Greybrd}"
+                            width="15rem"
+                            class="sapUiMediumMarginBegin"
+                            enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                        >
+                            <m:items>
+                                <core:Item
+                                    key="Grey Back Board"
+                                    text="Grey Back Board"
+                                />
+                                <core:Item
+                                    key="White Back Board"
+                                    text="White Back Board"
+                                />
+                                <core:Item
+                                    key="Curte Lumina Board"
+                                    text="Curte Lumina Board"
+                                />
+                                <core:Item
+                                    key="Cyber XL Board"
+                                    text="Cyber XL Board"
+                                />
+                                <core:Item
+                                    key="GlamKot Board"
+                                    text="GlamKot Board"
+                                />
+                                <core:Item
+                                    key="Maxo Fold Board"
+                                    text="Maxo Fold Board"
+                                />
+                                <core:Item
+                                    key="Shafire Graphics Board"
+                                    text="Shafire Graphics Board"
+                                />
+                                <core:Item
+                                    key="FBB"
+                                    text="FBB"
+                                />
+                                <core:Item
+                                    key="Blister Board"
+                                    text="Blister Board"
+                                />
+                                <core:Item
+                                    key=""
+                                    text=""
+                                />
+                            </m:items>
+                        </m:Select>
+                        <m:Text text="Grade :" 
+                        class="sapUiMediumMarginBegin"
+                        />
+                        <m:Input
+                              value="{jsonCentralModel>/Data/Material/Grade}"
+                            editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                            maxLength="100"
+                            class="sapUiSmallMarginBegin"
+                        />
+                    </m:HBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

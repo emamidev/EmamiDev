@@ -1,0 +1,82 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Pending List"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <m:ScrollContainer
+                        height="200px"
+                        width="100%"
+                        horizontal="false"
+                        vertical="true"
+                    >
+                        <m:Table
+                            items="{jsonPMPendingListModel>/}"
+                            popinLayout="GridSmall"
+                            sticky="ColumnHeaders"
+                        >
+                            <m:columns>
+                                <m:Column>
+                                    <m:Text text="Material" />
+                                </m:Column>
+                                <m:Column>
+                                    <m:Text text="Description" />
+                                </m:Column>
+
+                                <m:Column>
+                                    <m:Text text="Version" />
+                                </m:Column>
+
+                                <m:Column>
+                                    <m:Text text="Issued on" />
+                                </m:Column>
+
+                                <m:Column>
+                                    <m:Text text="Status" />
+                                </m:Column>
+
+                                <m:Column>
+                                    <m:Text text="Pending With" />
+                                </m:Column>
+                            </m:columns>
+
+                            <m:items>
+                                <m:ColumnListItem
+                                    type="Navigation"
+                                    press="onPressPMPendingListLineItem"
+                                >
+                                    <m:cells>
+                                        <m:Text
+                                            text="{jsonPMPendingListModel>Matnr}"
+                                        />
+                                        <m:Text
+                                            text="{jsonPMPendingListModel>Maktx}"
+                                        />
+                                        <m:Text
+                                            text="{jsonPMPendingListModel>Versn}"
+                                        />
+                                        <m:Text
+                                            text="{ path : 'jsonPMPendingListModel>IssueDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"
+                                        />
+                                        <m:Text
+                                            text="{jsonPMPendingListModel>Status}"
+                                        />
+                                        <m:Text
+                                            text="{jsonPMPendingListModel>Pendwith}"
+                                        />
+                                    </m:cells>
+                                </m:ColumnListItem>
+                            </m:items>
+                        </m:Table>
+                    </m:ScrollContainer>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

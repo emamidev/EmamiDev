@@ -1,0 +1,69 @@
+<mvc:View
+    controllerName="com.emami.spc.controller.PerfumeCreate"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    height="100%"
+>
+    <ObjectPageLayout
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        showFooter="true"
+    >
+        <headerTitle>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.HomeHeaderTitle"
+                type="XML"
+            />
+        </headerTitle>
+
+        <headerContent>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeHeader"
+                type="XML"
+            />
+        </headerContent>
+
+        <sections>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeStorageCondition"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeTable"
+                type="XML"
+            />
+              <!-- <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeAdditionalInfo"
+                type="XML"
+            /> -->
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeRevisionLog"
+                type="XML"
+            /><core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeApprovedManufacturer"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PerfumeApprovedVendors"
+                type="XML"
+            />
+           
+        </sections>
+
+        <footer>
+            <m:Bar>
+                <m:contentMiddle>
+                    <m:Button
+                        text="Save As Draft"
+                        type="Emphasized"
+                        press="onPressCreateBtn"
+                    />
+                    
+                </m:contentMiddle>
+            </m:Bar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

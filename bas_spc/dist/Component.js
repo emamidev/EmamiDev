@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/UIComponent","sap/ui/Device","com/emami/spc/model/models","sap/ui/model/json/JSONModel"],function(e,i,t,n){"use strict";return e.extend("com.emami.spc.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments);this.getRouter().initialize();var t=new n(i);t.setDefaultBindingMode("OneWay");this.setModel(t,"device")}})});
+//# sourceMappingURL=Component.js.map

@@ -1,0 +1,444 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:ui="sap.ui.table"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="2.Printing Parameters"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <!-- <blocks>
+                    <m:Table
+                        items="{jsonCentralModel>/PackagingMaterial/Data/PrintingParameters/results}"
+                        popinLayout="GridSmall"
+                        sticky="ColumnHeaders"
+                    >
+                        <m:columns>
+                            <m:Column>
+                                <m:Text text="Requirement" />
+                            </m:Column>
+
+                            <m:Column>
+                                <m:Text text="Test Method" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Unit" />
+                            </m:Column>
+
+                            <m:Column>
+                                <m:Text text="LSL" />
+                            </m:Column>
+                            <m:Column width="10rem">
+                                <m:Text text="Target" />
+                            </m:Column>
+
+                            <m:Column>
+                                <m:Text text="USL" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text
+                                    text="Release Criteria to be followed by QA to release"
+                                />
+                            </m:Column>
+
+                            <m:Column>
+                                <m:Text text="Acceptable Defect %" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Part of COA" />
+                            </m:Column>
+
+                            <m:Column>
+                                <m:Text text="Plant testing" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Costing" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Remove" />
+                            </m:Column>
+                        </m:columns>
+
+                        <m:items>
+                            <m:ColumnListItem>
+                                <m:cells>
+                                    <m:Text text="{jsonCentralModel>Reqmnt}" />
+                                    <m:Input
+                                        value="{jsonCentralModel>Tstmth}"
+                                        maxLength="30"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>Meins}"
+                                        maxLength="3"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>Lsl}"
+                                        maxLength="3"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>Target}"
+                                        showValueHelp="{ path: 'jsonCentralModel>Mkmnr', formatter: '.formatter.targetValueHelpVisibleFlag' }"
+                                        valueHelpRequest="onTargetValueHelpReq"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>Usl}"
+                                        maxLength="3"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>Relcri}"
+                                        maxLength="100"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>Accdef}"
+                                        maxLength="3"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                    <m:Select
+                                        selectedKey="{jsonCentralModel>Partcoa}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                text=""
+                                                key=""
+                                            />
+                                            <core:Item
+                                                text="Yes"
+                                                key="Yes"
+                                            />
+                                            <core:Item
+                                                text="No"
+                                                key="No"
+                                            />
+                                        </m:items>
+                                    </m:Select>
+                                    <m:Select
+                                        selectedKey="{jsonCentralModel>Planttst}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                text=""
+                                                key=""
+                                            />
+                                            <core:Item
+                                                text="Yes"
+                                                key="Yes"
+                                            />
+                                            <core:Item
+                                                text="No"
+                                                key="No"
+                                            />
+                                        </m:items>
+                                    </m:Select>
+                                    <m:Select
+                                        selectedKey="{jsonCentralModel>Remarks}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                text=""
+                                                key=""
+                                            />
+                                            <core:Item
+                                                text="Yes"
+                                                key="Yes"
+                                            />
+                                            <core:Item
+                                                text="No"
+                                                key="No"
+                                            />
+                                        </m:items>
+                                    </m:Select>
+                                    <m:Button
+                                        press="onDeletePMPrintingParameters"
+                                        icon="sap-icon://delete"
+                                        type="Reject"
+                                        visible="{= ${jsonCentralModel>Mandatory} === 'X' ? false : true  }"
+                                        enabled="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </m:cells>
+                            </m:ColumnListItem>
+                        </m:items>
+                    </m:Table>
+                </blocks> -->
+                <blocks>
+                    <ui:Table
+                        rows="{jsonCentralModel>/PackagingMaterial/Data/PrintingParameters/results}"
+                        selectionMode="None"
+                        paste="onPaste"
+                        ariaLabelledBy="title"
+                        visibleRowCount="5"
+                        id="printing"
+                    >
+                        <ui:extension>
+                            <m:OverflowToolbar>
+                                <m:ToolbarSpacer />
+                                <m:Button
+                                    icon="sap-icon://add"
+                                    text="Add Row"
+                                    type="Emphasized"
+                                    press="onAddPMPrintingParameters"
+                                    enabled="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                />
+                            </m:OverflowToolbar>
+                        </ui:extension>
+
+                        <ui:rowSettingsTemplate>
+                            <ui:RowSettings
+                                highlight="{jsonCentralModel>Flag}"
+                            />
+                        </ui:rowSettingsTemplate>
+                        <ui:columns>
+                            <!-- <ui:Column width="7rem">
+                                <m:Label
+                                    text="Requirement"
+                                    wrapping="true"
+                                />
+                                <ui:template>
+                                    <m:Text text="{jsonCentralModel>Reqmnt}" />
+                                </ui:template>
+                            </ui:Column> -->
+                            <ui:Column width="7rem">
+                                <m:Label text="Requirement" />
+
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Reqmnt}"
+                                        editable="{= ${jsonCentralModel>IsNew} === 'X' }"
+                                        showValueHelp="{= ${jsonCentralModel>IsNew} === 'X' }"
+                                        valueHelpRequest="onReqmntValueHelp"
+                                        tooltip="{jsonCentralModel>Reqmnt}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="7rem">
+                                <m:Label
+                                    text="Test Method"
+                                    wrapping="true"
+                                    required="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Tstmth}"
+                                        tooltip="{jsonCentralModel>Tstmth}"
+                                        maxLength="30"
+                                        enabled="{= ${jsonCentralModel>Quantitative} === 'X' ? false : true }"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem">
+                                <m:Label
+                                    text="Unit"
+                                    required="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Meins}"
+                                        showValueHelp="true"
+                                        valueHelpRequest="onUomValueHelpReqPM"
+                                        tooltip="{jsonCentralModel>Meins}"
+                                        enabled="{= ${jsonCentralModel>Qualitative} === 'X' ? true : false }"
+                                        maxLength="3"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem">
+                                <m:Label
+                                    text="LSL"
+                                    required="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Lsl}"
+                                        tooltip="{jsonCentralModel>Lsl}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="7rem">
+                                <m:Label
+                                    text="Target"
+                                    required="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Target}"
+                                        tooltip="{jsonCentralModel>Target}"
+                                        showValueHelp="{ path: 'jsonCentralModel>Mkmnr', formatter: '.formatter.targetValueHelpVisibleFlag' }"
+                                        valueHelpRequest="onTargetValueHelpReq"
+                                        valueHelpOnly="{ path: 'jsonCentralModel>Mkmnr', formatter: '.formatter.targetValueHelpVisibleFlag' }"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem">
+                                <m:Label
+                                    text="USL"
+                                    required="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Usl}"
+                                        tooltip="{jsonCentralModel>Usl}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="7rem">
+                                <m:Label
+                                    text="Release Criteria to be followed by QA to release"
+                                    required="true"
+                                    wrapping="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Relcri}"
+                                        tooltip="{jsonCentralModel>Relcri}"
+                                        maxLength="100"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem">
+                                <m:Label
+                                    text="Defect Classification"
+                                    required="true"
+                                    wrapping="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Accdef}"
+                                        tooltip="{jsonCentralModel>Accdef}"
+                                        editable="false"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="6rem">
+                                <m:Label
+                                    text="Part of COA"
+                                    required="true"
+                                    wrapping="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Partcoa}"
+                                        tooltip="{jsonCentralModel>Partcoa}"
+                                        editable="false"
+                                    />
+                                    <!-- <m:Select
+                                        selectedKey="{jsonCentralModel>Partcoa}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                text=""
+                                                key=""
+                                            />
+                                            <core:Item
+                                                text="Yes"
+                                                key="Yes"
+                                            />
+                                            <core:Item
+                                                text="No"
+                                                key="No"
+                                            />
+                                        </m:items>
+                                    </m:Select> -->
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="6rem">
+                                <m:Label
+                                    text="Plant testing"
+                                    required="true"
+                                    wrapping="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Planttst}"
+                                        tooltip="{jsonCentralModel>Planttst}"
+                                        editable="false"
+                                    />
+                                    <!-- <m:Select
+                                        selectedKey="{jsonCentralModel>Planttst}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                text=""
+                                                key=""
+                                            />
+                                            <core:Item
+                                                text="Yes"
+                                                key="Yes"
+                                            />
+                                            <core:Item
+                                                text="No"
+                                                key="No"
+                                            />
+                                        </m:items>
+                                    </m:Select> -->
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="7rem">
+                                <m:Label
+                                    text="Costing"
+                                    required="true"
+                                />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Remarks}"
+                                        tooltip="{jsonCentralModel>Remarks}"
+                                        editable="false"
+                                    />
+                                    <!-- <m:Select
+                                        selectedKey="{jsonCentralModel>Remarks}"
+                                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                text=""
+                                                key=""
+                                            />
+                                            <core:Item
+                                                text="Yes"
+                                                key="Yes"
+                                            />
+                                            <core:Item
+                                                text="No"
+                                                key="No"
+                                            />
+                                        </m:items>
+                                    </m:Select> -->
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem">
+                                <m:Label text="Remove" />
+                                <ui:template>
+                                    <m:Button
+                                        press="onDeletePMPrintingParameters"
+                                        icon="sap-icon://delete"
+                                        type="Reject"
+                                        visible="{= ${jsonCentralModel>Mandatory} === 'X' ? false : true  }"
+                                        enabled="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                        </ui:columns>
+                    </ui:Table>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

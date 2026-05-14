@@ -1,0 +1,99 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <m:HeaderContainer showDividers="false">
+        <m:HBox>
+            <m:VBox>
+                <m:Text
+                    text="Item Code"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Plant Part"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Name"
+                    class="sapUiSmallMarginBottom"
+                />
+                <m:Text
+                    text="Scientific Name"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text text="Revision/ Version No" />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/Matnr}" editable="{jsonCentralModel>/RawMaterial/Editable/Matnr}" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/PlantPart}" class="removeBorder"  editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/Maktx}" editable="{jsonCentralModel>/RawMaterial/Editable/Maktx}" tooltip="{jsonCentralModel>/RawMaterial/Data/Maktx}"/>
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/ScientificName}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/Versn}" editable="{jsonCentralModel>/RawMaterial/Editable/Versn}" enabled="{jsonCentralModel>/RawMaterial/Editable/All}" />
+            </m:VBox>
+
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Text
+                    text="Document No/ RM Code"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Effective Date"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Grade"
+                    class="sapUiSmallMarginBottom"
+                />
+                <m:Text
+                    text="Retesting Frequency"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text text="INCI Name" />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/DocRmCode}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:DatePicker  value="{ path : 'jsonCentralModel>/RawMaterial/Data/EffctDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" change="onChangeRMEffctDate" />
+                <!-- <m:DatePicker value="" /> -->
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/Grade}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/RetestFreq}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/InciName}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" tooltip="{jsonCentralModel>/RawMaterial/Data/InciName}"/>
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Text
+                    text="Preparation Date"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Reference"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Shelf Life"
+                    class="sapUiSmallMarginBottom"
+                />
+                <m:Text
+                    text="CAS No"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text text="Next Review Date" />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:DatePicker  value="{ path : 'jsonCentralModel>/RawMaterial/Data/PerpDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" change="onChangeRMPerpDate" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/Reference}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/ShelfLife}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/RawMaterial/Data/CasNo}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                <m:DatePicker  value="{ path : 'jsonCentralModel>/RawMaterial/Data/NextReview' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}" editable="{jsonCentralModel>/RawMaterial/Editable/All}"  change="onChangeRMNextReview" />
+            </m:VBox>
+        </m:HBox>
+    </m:HeaderContainer>
+</core:FragmentDefinition>

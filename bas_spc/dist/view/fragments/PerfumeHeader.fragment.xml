@@ -1,0 +1,83 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <m:HeaderContainer showDividers="false">
+        <m:HBox>
+            <m:VBox>
+                <m:Text
+                    text="Item Code"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Revision/Version No"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Name"
+                    class="sapUiSmallMarginBottom"
+                /> 
+                <m:Text
+                    text="PR Code"
+                    class="sapUiSmallMarginBottom"
+                />
+
+            </m:VBox> 
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/Matnr}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/Matnr}" />
+                <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/Versn}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/Versn}" enabled="{jsonCentralModel>/PerfumeMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/Maktx}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/Maktx}" tooltip="{jsonCentralModel>/PerfumeMaterial/Data/Maktx}"/>
+                <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/PRCode}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" />
+            </m:VBox>
+
+            <m:VBox class="sapUiSmallMarginBegin">
+                <!-- <m:Text
+                    text="Approved Vendor"
+                    class="sapUiSmallMarginBottom"
+                /> -->
+
+                <m:Text
+                    text="Effective Date"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Grade"
+                    class="sapUiSmallMarginBottom" 
+                /> 
+                <m:Text text="Next Review Date" />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <!-- <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/ApprovedVendor}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" /> -->
+                <m:DatePicker  value="{ path : 'jsonCentralModel>/PerfumeMaterial/Data/EffctDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/Matnr}" change="onChangePRMEffctDate" />
+                <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/Grade}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" />
+                 <m:DatePicker  value="{ path : 'jsonCentralModel>/PerfumeMaterial/Data/NextReview' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/Matnr}"  change="onChangePRMNextReview" />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Text
+                    text="Preparation Date"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Reference"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Shelf Life" 
+                    class="sapUiSmallMarginBottom"
+                />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:DatePicker  value="{ path : 'jsonCentralModel>/PerfumeMaterial/Data/PerpDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" change="onChangePRMPerpDate" />
+                <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/Reference}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" />
+                <m:Input value="{jsonCentralModel>/PerfumeMaterial/Data/ShelfLife}" editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" />
+                
+            </m:VBox>
+        </m:HBox>
+    </m:HeaderContainer>
+</core:FragmentDefinition>

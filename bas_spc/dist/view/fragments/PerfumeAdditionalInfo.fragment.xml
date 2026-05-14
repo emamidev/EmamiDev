@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:ui="sap.ui.table"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Additional Info"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                <m:VBox >
+                <m:HBox >
+                   <m:Label text="Manufacturing Location" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+                   <m:TextArea value="{jsonCentralModel>/PerfumeMaterial/Data/ManLocat}"  editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" height="4rem" width="60rem"/>
+                </m:HBox>  
+                <m:HBox >
+                   <m:Label text="Remarks(If any)" class="sapUiSmallMarginTop sapUiLargeMarginEnd"/>
+                   <m:TextArea value="{jsonCentralModel>/PerfumeMaterial/Data/Remarks}"  editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}" height="4rem" width="60rem" class="sapUiSmallMarginBegin"/>
+                </m:HBox>    
+                </m:VBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

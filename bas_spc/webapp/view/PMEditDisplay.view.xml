@@ -1,0 +1,124 @@
+<mvc:View
+    controllerName="com.emami.spc.controller.PMEditDisplay"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    height="100%"
+>
+    <ObjectPageLayout
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        showFooter="true"
+    >
+        <headerTitle>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.HomeHeaderTitle"
+                type="XML"
+            />
+        </headerTitle>
+
+        <headerContent>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMHeader"
+                type="XML"
+            />
+        </headerContent>
+ 
+        <sections>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMRegulatoryIntegrity"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMPrintingParameters"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMAppearanceVisualSensorial"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMMeasurementDim"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMPerformance"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMDevelopmental"
+                type="XML"
+            />
+            <!-- <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.Delivery"
+                type="XML"
+            /> -->
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMSustainabilitySafety"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMSpecialInstructions"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMLog"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.PMStatus"
+                type="XML"
+            />
+        </sections>
+        <footer>
+            <m:Bar>
+                <m:contentMiddle>
+                    <m:Button
+                        text="Save"
+                        type="Emphasized"
+                        press="onPressSave"
+                        visible="{jsonCentralModel>/PackagingMaterial/Visible/SaveBtn}"
+                    />
+                    <m:Button
+                        text="Accept"
+                        type="Emphasized"
+                        press="onPressAccept"
+                        visible="{jsonCentralModel>/PackagingMaterial/Visible/AcceptBtn}"
+                    />
+                    <m:Button
+                        text="Reject"
+                        type="Emphasized"
+                        press="onPressReject"
+                        visible="{jsonCentralModel>/PackagingMaterial/Visible/RejectBtn}"
+                    />
+
+                    <m:Button
+                        text="Initiate Approval"
+                        type="Emphasized"
+                        press="onPressInitiateApproval"
+                        visible="{jsonCentralModel>/PackagingMaterial/Visible/InitiateBtn}"
+                    />
+                    <m:Button
+                        text="Print"
+                        type="Emphasized"
+                        press="onPressPrint"
+                    />
+                    <m:Button
+                        text="Create Reference"
+                        type="Emphasized"
+                        press="onPressCreateReference"
+                        visible="{jsonCentralModel>/PackagingMaterial/Visible/CreateReferenceBtn}"
+                    />
+                    <m:Button
+                        text="Create Task List"
+                        type="Emphasized"
+                        press="onPressCreateTaskList"
+                        visible="{jsonCentralModel>/PackagingMaterial/Visible/CreateTaskListBtn}"
+                    />
+                </m:contentMiddle>
+            </m:Bar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

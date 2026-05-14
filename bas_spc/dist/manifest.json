@@ -1,0 +1,364 @@
+{
+    "_version": "1.17.0",
+    "sap.app": {
+        "id": "com.emami.spc",
+        "type": "application", 
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"  
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.10.5",
+            "toolsId": "847e71c0-d491-463d-af7f-b734c2d7577a"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZMM_PAK_SPEC_MG_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "jsonCentralModel": {
+                "uri": "model/jsonCentralModel.json",
+                "type": "JSON"
+            } 
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.71.60",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.emami.spc.i18n.i18n"
+                }
+            },
+            "": { 
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "useBatch": false,
+                    "defaultUpdateMethod": "PUT"
+                }
+            },
+            "jsonCentralModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "jsonCentralModel"
+            },
+            "jsonMaterialListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonPendingListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonMaterialDropdownModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonRMSpecificListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonPRMSpecificListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonRMPendingListModel": {
+                "preload": true, 
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonPRMPendingListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonPMPendingListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonTestListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonUomListModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonPMMicDorpDownModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonPMMicDorpDownLocalModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonRefMaterialDropdownModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonTaskListMessageModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonRMRefMaterialDropdownModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "jsonPRMRefMaterialDropdownModel": {
+                "preload": true,
+                "type": "sap.ui.model.json.JSONModel"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        }, 
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.emami.spc.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteHome",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetHome"
+                    ]
+                },
+                {
+                    "name": "RoutePMList",
+                    "pattern": "PMList/{MaterialType},{User}",
+                    "target": [
+                        "TargetPMList"
+                    ]
+                },
+                {
+                    "name": "RoutePMCreate",
+                    "pattern": "PMCreate/{Matnr},:RefMatnr:,:RefVersn:",
+                    "target": [
+                        "TargetPMCreate"
+                    ]
+                },
+                {
+                    "name": "RoutePMEditDisplay",
+                    "pattern": "PMEditDisplay/{Matnr},{Versn},{User},:Mode:",
+                    "target": [
+                        "TargetPMEditDisplay"
+                    ]
+                },
+                {
+                    "name": "RoutePMCreateReference",
+                    "pattern": "PMCreateReference/{Matnr},{Versn},{User}",
+                    "target": [
+                        "TargetPMCreateReference"
+                    ]
+                },
+                {
+                    "name": "RouteRMCreate",
+                    "pattern": "RMCreate/{Matnr},:RefMatnr:,:RefVersn:",
+                    "target": [
+                        "TargetRMCreate"
+                    ]
+                },
+                {
+                    "name": "RouteRMEditDisplay",
+                    "pattern": "RMEditDisplay/{Matnr},{Versn},{User},:Mode:",
+                    "target": [
+                        "TargetRMEditDisplay"
+                    ]
+                },
+                {
+                    "name": "RouteRMCreateReference",
+                    "pattern": "RMCreateReference/{Matnr},{Versn},{User}",
+                    "target": [
+                        "TargetRMCreateReference"
+                    ]
+                }, 
+                {
+                    "name": "RouteRMList",
+                    "pattern": "RMList/{MaterialType},{User}",
+                    "target": [
+                        "TargetRMList"
+                    ]
+                },
+                {
+                    "name": "RoutePRMCreateReference",
+                    "pattern": "PRMCreateReference/{Matnr},{Versn},{User}",
+                    "target": [
+                        "TargetPRMCreateReference"
+                    ]
+                },
+                {
+                    "name": "RoutePRMCreate",
+                    "pattern": "PRMCreate/{Matnr},:RefMatnr:,:RefVersn:",
+                    "target": [
+                        "TargetPRMCreate"
+                    ]
+                },
+                {
+                    "name": "RoutePerfumeList",
+                    "pattern": "PerfumeList/{MaterialType},{User}",
+                    "target": [
+                        "TargetPerfumeList"
+                    ]
+                },
+                {
+                    "name": "RoutePerfumeEditDisplay",
+                    "pattern": "PerfumeEditDisplay/{Matnr},{Versn},{User},:Mode:",
+                    "target": [
+                        "TargetPerfumeEditDisplay"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetHome": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Home",
+                    "viewName": "Home"
+                },
+                "TargetPMList": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PMList",
+                    "viewName": "PMList"
+                },
+                "TargetPMCreate": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PMCreate",
+                    "viewName": "PMCreate"
+                },
+                "TargetPMEditDisplay": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PMEditDisplay",
+                    "viewName": "PMEditDisplay"
+                },
+                "TargetPMCreateReference": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PMCreateReference",
+                    "viewName": "PMCreateReference"
+                },
+                "TargetRMCreate": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "RMCreate",
+                    "viewName": "RMCreate"
+                },
+                "TargetRMEditDisplay": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "RMEditDisplay",
+                    "viewName": "RMEditDisplay"
+                },
+                "TargetRMCreateReference": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "RMCreateReference",
+                    "viewName": "RMCreateReference"
+                },
+                "TargetPRMCreateReference": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PerfumeCreateReference",
+                    "viewName": "PerfumeCreateReference"
+                },
+                "TargetRMList": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "RMList",
+                    "viewName": "RMList"
+                },
+                "TargetPerfumeList": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PerfumeList",
+                    "viewName": "PerfumeList"
+                },
+                "TargetPerfumeEditDisplay":{
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PerfumeEditDisplay",
+                    "viewName": "PerfumeEditDisplay"
+                },
+                "TargetPRMCreate":{
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PerfumeCreate",
+                    "viewName": "PerfumeCreate"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "com.emami.spc.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

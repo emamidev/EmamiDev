@@ -1,0 +1,25 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <TableSelectDialog
+        items="{jsonPMMicDorpDownLocalModel>/}"
+        noDataText="No Data"
+        title=""
+        confirm="onPressPMTargetListDialogLineItem"
+        contentWidth="30%"
+    >
+        <columns>
+            <Column>
+                <header>
+                    <Text text="" />
+                </header>
+            </Column>
+        </columns>
+        <ColumnListItem>
+            <cells>
+                <Text text="{jsonPMMicDorpDownLocalModel>Tests}" />
+            </cells>
+        </ColumnListItem>
+    </TableSelectDialog>
+</core:FragmentDefinition>

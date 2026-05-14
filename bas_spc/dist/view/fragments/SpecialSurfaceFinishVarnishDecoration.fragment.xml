@@ -1,0 +1,242 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+
+ <ObjectPageSection
+                titleUppercase="false"
+                title="Special Surface Finish/Varnish/Decoration"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:VBox>
+                                <m:HBox>
+                                    <m:Select
+                                        selectedKey="{jsonCentralModel>/Data/SpecialSurface/Noprmr}"
+                                        width="10rem"
+                                        enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key="No Primer"
+                                                text="No Primer"
+                                            />
+                                            <core:Item
+                                                key="Primer"
+                                                text="Primer"
+                                            />
+                                             <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                        </m:items>
+                                    </m:Select>
+
+                                    <m:Text
+                                        text="Top Varnish:"
+                                        class="sapUiMediumMarginBegin"
+                                    />
+                                    <m:Select
+                                         selectedKey="{jsonCentralModel>/Data/SpecialSurface/Topverns}"
+                                        width="10rem"
+                                        class="sapUiMediumMarginBegin"
+                                        enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key="Gloss Aqua"
+                                                text="Gloss Aqua"
+                                            />
+                                            <core:Item
+                                                key="Double Aqua"
+                                                text="Double Aqua"
+                                            />
+                                            <core:Item
+                                                key="Gloss UV"
+                                                text="Gloss UV"
+                                            />
+                                            <core:Item
+                                                key="Matt UV"
+                                                text="Matt UV"
+                                            />
+                                            <core:Item
+                                                key="Shimearing + UV"
+                                                text="Shimearing + UV"
+                                            />
+                                            <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                        </m:items>
+                                    </m:Select>
+
+                                    <m:Text
+                                        text="Grade &amp; Vendor :"
+                                        class="sapUiMediumMarginBegin"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>/Data/SpecialSurface/Grdven}"
+                                        editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                         maxLength="30"
+                                        class="sapUiSmallMarginBegin"
+                                    />
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Select
+                                         selectedKey="{jsonCentralModel>/Data/SpecialSurface/Noembos}"
+                                        width="10rem"
+                                        enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key="No Embossing"
+                                                text="No Embossing"
+                                            />
+                                            <core:Item
+                                                key="Embossed Carton"
+                                                text="Embossed Carton"
+                                            />
+                                            <core:Item
+                                                key="Debossed Carton"
+                                                text="Debossed Carton"
+                                            />
+                                              <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                        </m:items>
+                                    </m:Select>
+
+                                    <m:Select
+                                         selectedKey="{jsonCentralModel>/Data/SpecialSurface/Foilstam}"
+                                        width="10rem"
+                                        class="sapUiMediumMarginBegin"
+                                        enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key="Special Foil Stamping"
+                                                text="Special Foil Stamping"
+                                            />
+                                            <core:Item
+                                                key="No Foil Stamping"
+                                                text="No Foil Stamping"
+                                            />
+                                            <core:Item
+                                                key="Silver Foil Stamping"
+                                                text="Silver Foil Stamping"
+                                            />
+                                            <core:Item
+                                                key="Gold Foil Staming"
+                                                text="Gold Foil Staming"
+                                            />
+                                            <core:Item
+                                                key="Cold Foiling"
+                                                text="Cold Foiling"
+                                            />
+                                             <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                        </m:items>
+                                    </m:Select>
+
+                                    <m:Text
+                                        text="Grade of Foil:"
+                                        class="sapUiMediumMarginBegin"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>/Data/SpecialSurface/Foilgrade}"
+                                        editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                         maxLength="30"
+                                        class="sapUiSmallMarginBegin"
+                                    />
+                                </m:HBox>
+
+                                <m:HBox>
+                                    <m:Select
+                                         selectedKey="{jsonCentralModel>/Data/SpecialSurface/Nosrcpn}"
+                                        width="15rem"
+                                        enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key="No Screen Printing"
+                                                text="No Screen Printing"
+                                            />
+                                            <core:Item
+                                                key="Screen Printing"
+                                                text="Screen Printing"
+                                            />
+                                             <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                        </m:items>
+                                    </m:Select>
+
+                                    <m:Text
+                                        text="Lense Foil :"
+                                        class="sapUiMediumMarginBegin"
+                                    />
+                                    <m:Select
+                                         selectedKey="{jsonCentralModel>/Data/SpecialSurface/Lensefoil}"
+                                        width="10rem"
+                                        class="sapUiMediumMarginBegin"
+                                        enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key="NA"
+                                                text="NA"
+                                            />
+                                            <core:Item
+                                                key="Yes"
+                                                text="Yes"
+                                            />
+                                             <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                        </m:items>
+                                    </m:Select>
+
+                                    <m:Text
+                                        text="Print On :"
+                                        class="sapUiMediumMarginBegin"
+                                    />
+                                    <m:Select
+                                         selectedKey="{jsonCentralModel>/Data/SpecialSurface/Printon}"
+                                        width="15rem"
+                                        class="sapUiMediumMarginBegin"
+                                        enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key="Top Side of Board"
+                                                text="Top Side of Board"
+                                            />
+                                            <core:Item
+                                                key="Back Side of Board"
+                                                text="Back Side of Board"
+                                            />
+                                            <core:Item
+                                                key="Both Top &amp; Back Side of Board"
+                                                text="Both Top &amp; Back Side of Board"
+                                            />
+                                             <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                        </m:items>
+                                    </m:Select>
+                                </m:HBox>
+                            </m:VBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+</core:FragmentDefinition>

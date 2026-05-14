@@ -1,0 +1,174 @@
+<!-- <core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <m:HeaderContainer showDividers="false">
+        <l:VerticalLayout width="100%">
+            <fb:FilterBar
+                clear="onPressClear"
+                useToolbar="false"
+                showClearOnFB="false"
+                showFilterConfiguration="false"
+                showGoOnFB="false"
+            >
+                <fb:filterGroupItems>
+                    <fb:FilterGroupItem
+                        visibleInFilterBar="true"
+                        groupName="G1"
+                        groupTitle="Group1"
+                        name="B"
+                        label="From Date"
+                    >
+                        <fb:control>
+                            <m:HBox>
+                                <m:DatePicker
+                                    value="{ path : 'jsonCentralModel>/Home/FromDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"
+                                />
+                            </m:HBox>
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem
+                        visibleInFilterBar="true"
+                        groupName="G2"
+                        groupTitle="Group2"
+                        name="B"
+                        label="To Date"
+                    >
+                        <fb:control>
+                            <m:HBox>
+                                <m:DatePicker
+                                    value="{ path : 'jsonCentralModel>/Home/ToDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"
+                                />
+                            </m:HBox>
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem
+                        visibleInFilterBar="true"
+                        groupName="G3"
+                        groupTitle="Group3"
+                        name="B"
+                        label="Materail Code"
+                    >
+                        <fb:control>
+                            <m:HBox>
+                                <m:Input
+                                    value="{jsonCentralModel>/Home/SelectedMaterialCode}"
+                                    valueHelpRequest="onMaterialListValueHelpReq"
+                                    change="onChangeMaterialListInput"
+                                    showValueHelp="true"
+                                    required="true"
+                                />
+                            </m:HBox>
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem
+                        visibleInFilterBar="true"
+                        groupName="G4"
+                        groupTitle="Group4"
+                        name="B"
+                        label=""
+                    >
+                        <fb:control>
+                            <m:HBox>
+                                <m:Button
+                                    text="Create"
+                                    press="onPressCreate"
+                                    type="Emphasized"
+                                    visible="{jsonCentralModel>/Home/VisibleCreateBtn}"
+                                    enabled="{jsonCentralModel>/Home/EnableDisableCreate}"
+                                    class="sapUiMediumMarginBegin"
+                                />
+                                <m:Button
+                                    icon="sap-icon://search"
+                                    press="onPressSearch"
+                                    type="Emphasized"
+                                    class="sapUiTinyMarginBegin"
+                                />
+                                <m:Button
+                                    icon="sap-icon://clear-filter"
+                                    press="onPressClear"
+                                    type="Emphasized"
+                                    class="sapUiTinyMarginBegin"
+                                />
+                            </m:HBox>
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                </fb:filterGroupItems>
+            </fb:FilterBar>
+        </l:VerticalLayout>
+    </m:HeaderContainer>
+</core:FragmentDefinition> -->
+<core:FragmentDefinition
+    xmlns:m="sap.m" 
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <m:HeaderContainer showDividers="false">
+        <!-- <l:VerticalLayout width="100%"> -->
+        <!-- <l:HorizontalLayout> -->
+
+        <!-- <m:FlexBox
+            direction="Column"
+            justifyContent="Start"
+            alignItems="Start"
+            width="100%"
+        > -->
+        <m:FlexBox
+            direction="{= ${device>/system/phone} ? 'Column' : 'Row' }"
+            alignItems="Center"
+            justifyContent="Start"
+            wrap="Wrap"
+        >
+            <m:DatePicker
+                placeholder="From Date"
+                width="8rem"
+                class="sapUiTinyMarginEnd"
+                value="{ path : 'jsonCentralModel>/Home/FromDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"
+            />
+
+            <m:DatePicker
+                placeholder="To Date"
+                width="8rem"
+                class="sapUiTinyMarginEnd"
+                value="{ path : 'jsonCentralModel>/Home/ToDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"
+            />
+
+            <m:Input
+                width="8rem" 
+                class="sapUiTinyMarginEnd"
+                placeholder="Material Code" 
+                value="{jsonCentralModel>/Home/SelectedMaterialCode}" 
+                valueHelpRequest="onMaterialListValueHelpReq"
+                change="onChangeMaterialListInput"
+                showValueHelp="true"
+            />
+            <m:Button
+                class="sapUiTinyMarginEnd"
+                text="Create"
+                press="onPressCreate"
+                type="Emphasized"
+                visible="{jsonCentralModel>/Home/VisibleCreateBtn}"
+                enabled="{jsonCentralModel>/Home/EnableDisableCreate}"
+            />
+            <m:Button
+                class="sapUiTinyMarginEnd"
+                icon="sap-icon://search"
+                press="onPressSearch"
+                type="Emphasized"
+            />
+            <m:Button
+                icon="sap-icon://clear-filter"
+                press="onPressClear"
+                type="Emphasized"
+            />
+        </m:FlexBox>
+        <!-- </m:FlexBox> -->
+        <!-- </l:HorizontalLayout> -->
+        <!-- </l:VerticalLayout> -->
+    </m:HeaderContainer>
+</core:FragmentDefinition>

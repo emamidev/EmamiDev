@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+
+ <ObjectPageSection
+                titleUppercase="false"
+                title="Storage Condition &amp;Handling Instructions"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:TextArea
+                                editable="{jsonCentralModel>/RawMaterial/Editable/All}" 
+                                height="8rem"
+                                width="100%"
+                                value="{jsonCentralModel>/RawMaterial/Data/StrgHandIns}"
+                            />
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+</core:FragmentDefinition>

@@ -1,0 +1,56 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+ <ObjectPageSection
+                titleUppercase="false"
+                title="Purchase"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Text text="Unit of Purchase" />
+                                <m:Input
+                                    value="{jsonCentralModel>/Data/Purchase/Meins}"
+                                    editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                     maxLength="3"
+                                    class="sapUiSmallMarginBegin"
+                                />
+                                <m:Text
+                                    text="Printing Process"
+                                    class="sapUiMediumMarginBegin"
+                                />
+                                <m:Input
+                                    value="{jsonCentralModel>/Data/Purchase/Printproc}"
+                                    editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    maxLength="30"
+                                    class="sapUiSmallMarginBegin"
+                                />
+                                <m:Text
+                                    text="Reco.Storage condition"
+                                    class="sapUiMediumMarginBegin"
+                                />
+                                <m:Input
+                                    value="{jsonCentralModel>/Data/Purchase/Recostr}"
+                                    editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    maxLength="30"
+                                    class="sapUiSmallMarginBegin"
+                                />
+                                <m:Text
+                                    text="Shelf life@ Storage condition"
+                                    class="sapUiMediumMarginBegin"
+                                />
+                                <m:Input
+                                    value="{jsonCentralModel>/Data/Purchase/Shelflife}"
+                                    editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    maxLength="30"
+                                    class="sapUiSmallMarginBegin"
+                                />
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+</core:FragmentDefinition>

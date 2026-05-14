@@ -1,0 +1,65 @@
+<mvc:View
+    controllerName="com.emami.spc.controller.RMCreate"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    height="100%"
+>
+    <ObjectPageLayout
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        showFooter="true"
+    >
+        <headerTitle>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.HomeHeaderTitle"
+                type="XML"
+            />
+        </headerTitle>
+
+        <headerContent>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMHeader"
+                type="XML"
+            />
+        </headerContent>
+
+        <sections>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMStorageCondition"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMTable"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMRevisionLog"
+                type="XML"
+            /><core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMApprovedManufacturer"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMApprovedVendors"
+                type="XML"
+            />
+           
+        </sections>
+
+        <footer>
+            <m:Bar>
+                <m:contentMiddle>
+                    <m:Button
+                        text="Save As Draft"
+                        type="Emphasized"
+                        press="onPressCreateBtn"
+                    />
+                    
+                </m:contentMiddle>
+            </m:Bar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

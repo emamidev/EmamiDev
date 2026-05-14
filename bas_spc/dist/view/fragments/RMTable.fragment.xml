@@ -1,0 +1,342 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:ui="sap.ui.table"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Specification Details"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <!-- <m:Table
+                        items="{jsonCentralModel>/RawMaterial/Data/SpecificationItem/results}"
+                        popinLayout="GridSmall"
+                        sticky="ColumnHeaders"
+                    >
+                        <m:columns>
+                            <m:Column>
+                                <m:Text text="Sl.No" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Tests" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Specification" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="ATP Reference" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Frequency" />
+                            </m:Column>
+                        </m:columns>
+
+                        <m:items>
+                            <m:ColumnListItem>
+                                <m:cells>
+                                    <m:Text text="{jsonCentralModel>Lineitm}" />
+                                    <m:Text text="{jsonCentralModel>Tests}" />
+                                    <m:Input value="{jsonCentralModel>Specification}" maxLength="1024" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                                    <m:Input value="{jsonCentralModel>AtpReference}" maxLength="40" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                                    <m:Input value="{jsonCentralModel>Frequency}" maxLength="40" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+               
+                                </m:cells>
+                            </m:ColumnListItem>
+                        </m:items>
+                    </m:Table> -->
+
+                    <!-- <m:Table
+                        items="{jsonCentralModel>/RawMaterial/Data/SpecificationItem/results}"
+                        popinLayout="GridSmall"
+                        sticky="ColumnHeaders"
+                    >
+                        <m:headerToolbar>
+                            <m:OverflowToolbar>
+                                <m:ToolbarSpacer />
+                                <m:Button
+                                    press="openPersoDialog"
+                                    icon="sap-icon://add"
+                                    type="Accept"
+                                />
+                            </m:OverflowToolbar>
+                        </m:headerToolbar>
+                        <m:columns>
+                            <m:Column>
+                                <m:Text text="Sl.No" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Quantitative" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Qualitavite" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Tests"  />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Specification" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="ATP Reference" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Low" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="High" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Uom" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Frequency" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Edit" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Remove" />
+                            </m:Column>
+                        </m:columns>
+
+                        <m:items>
+                            <m:ColumnListItem>
+                                <m:cells>
+                                    <m:Text text="{jsonCentralModel>Lineitm}" />
+                                    <m:CheckBox
+                                        displayOnly="true"
+                                        selected="true"
+                                    />
+                                    <m:CheckBox
+                                        displayOnly="true"
+                                        selected="false"
+                                    />
+                                    <m:Input
+                                        value="{jsonCentralModel>Tests}"
+                                        valueHelpRequest="onTestsValueHelpReq"
+                                        change="onChangeTestsInput"
+                                        showValueHelp="true"
+                                    />
+                                    <m:Input value="{jsonCentralModel>Specification}" />
+                                    <m:Text text="{jsonCentralModel>AtpReference}" />
+                                    <m:Input value="{jsonCentralModel>}" />
+                                    <m:Input value="{jsonCentralModel>}" />
+                                    <m:Input value="{jsonCentralModel>}" />
+                                    <m:Input value="{jsonCentralModel>Frequency}" />
+                                    <m:Button
+                                        press="openPersoDialog"
+                                        icon="sap-icon://edit"
+                                        type="Emphasized"
+                                    />
+                                    <m:Button
+                                        press="openPersoDialog"
+                                        icon="sap-icon://delete"
+                                        type="Reject"
+                                    />
+                                </m:cells>
+                            </m:ColumnListItem>
+                        </m:items>
+                    </m:Table> -->
+
+                    <ui:Table
+                        rows="{jsonCentralModel>/RawMaterial/Data/SpecificationItem/results}"
+                        selectionMode="None"
+                        paste="onPaste"
+                        ariaLabelledBy="title"
+                        visibleRowCount="5" 
+                    >
+                        <ui:extension> 
+                            <m:OverflowToolbar style="Clear">
+                                <m:ToolbarSpacer />
+                                <m:Button
+                                    press="onAddSpecificationItem"
+                                    icon="sap-icon://add"
+                                    type="Accept"
+                                    visible="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                />
+                            </m:OverflowToolbar>
+                        </ui:extension>
+                        <!-- <ui:rowSettingsTemplate>
+                            <ui:RowSettings
+                                highlight="{jsonCentralModel>Flag}"
+                            />
+                        </ui:rowSettingsTemplate> -->
+                        <ui:columns>
+                            <!-- <ui:Column width="6rem">
+                                <m:Label text="Sl." />
+                                <ui:template>
+                                    <m:Text
+                                        text="{jsonCentralModel>Lineitm}"
+                                        wrapping="false"
+                                    />
+                                </ui:template>
+                            </ui:Column> -->
+                            <ui:Column>
+                                <m:Label text="QT" />
+                                <ui:template>
+                                    <m:CheckBox
+                                        displayOnly="true"
+                                        selected="{= ${jsonCentralModel>Quantitative} === 'X' ? true : false }"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column>
+                                <m:Label text="QL" />
+                                <ui:template>
+                                    <m:CheckBox
+                                        displayOnly="true"
+                                        selected="{= ${jsonCentralModel>Qualitative} === 'X' ? true : false }"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="10rem">
+                                <m:Label text="Tests" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Tests}"
+                                        valueHelpRequest="onTestsValueHelpReq"
+                                        showValueHelp="true"
+                                        tooltip="{jsonCentralModel>Tests}"
+                                        maxLength="40"
+                                        editable="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="10rem">
+                                <m:Label text="Specification" />
+                                <ui:template>
+                                    <m:TextArea
+                                        value="{jsonCentralModel>Specification}"
+                                        growing="true"
+                                        width="100%"
+                                        height="4rem"
+                                        tooltip="{jsonCentralModel>Specification}"
+                                        maxLength="1024"
+                                        editable="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem">
+                                <m:Label text="ATP Ref" />
+                                <ui:template>
+                                    <m:Text
+                                        text="{jsonCentralModel>AtpReference}"
+                                        wrapping="false"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="Operator" />
+                                <ui:template>
+                                    <m:Select
+                                        width="8rem"
+                                        selectedKey="{jsonCentralModel>Operator}"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        tooltip="{jsonCentralModel>Operator}"
+                                        enabled="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                        change="onUOMLineitemChange"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                            <core:Item
+                                                key="GE"
+                                                text="Greater Than"
+                                            />
+                                            <core:Item
+                                                key="LE"
+                                                text="Less Than"
+                                            />
+                                            <core:Item
+                                                key="NLT"
+                                                text="Not Less Than"
+                                            />
+                                            <core:Item
+                                                key="NMT"
+                                                text="Not More Than"
+                                            />
+                                        </m:items>
+                                    </m:Select>
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="Low" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Lowvalue}"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        enabled="{= ${jsonCentralModel>Operator} === 'NLT' ? true : false || ${jsonCentralModel>Operator} === 'NMT' ? false : true }"
+                                        change="onUOMLineitemChange"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="High" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Uppervalue}"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        enabled="{= ${jsonCentralModel>Operator} === 'NLT' ? false : true || ${jsonCentralModel>Operator} === 'NMT' ? true : false }"
+                                        change="onUOMLineitemChange"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="6rem">
+                                <m:Label text="Uom" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Uom}"
+                                        maxLength="3"
+                                        valueHelpRequest="onUomValueHelpReq"
+                                        showValueHelp="true"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        enabled="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="Frequency" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Frequency}"
+                                        maxLength="40"
+                                        tooltip="{jsonCentralModel>Frequency}"
+                                        editable="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <!-- <ui:Column width="3rem">
+                                <m:Label text="Edit" />
+                                <ui:template>
+                                    <m:Button
+                                        press="openPersoDialog"
+                                        icon="sap-icon://edit"
+                                        type="Emphasized"
+                                    />
+                                </ui:template>
+                            </ui:Column> -->
+                            <ui:Column
+                                width="5rem"
+                                visible="{jsonCentralModel>/RawMaterial/Editable/All}"
+                            >
+                                <m:Label text="Remove" />
+                                <ui:template>
+                                    <m:Button
+                                        press="onDeleteSpecification"
+                                        icon="sap-icon://delete"
+                                        type="Reject"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                        </ui:columns>
+                    </ui:Table>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

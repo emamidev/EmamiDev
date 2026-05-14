@@ -1,0 +1,48 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Top Side Color Details"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <m:HBox>
+                        <m:Text text="CMYK :" />
+                        <m:Input
+                            value="{jsonCentralModel>/Data/TopSideColorDetails/Cmyk}"
+                            editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                            maxLength="100"
+                            class="sapUiSmallMarginBegin"
+                        />
+
+                        <m:Text
+                            text="Gold / Siver :"
+                            class="sapUiMediumMarginBegin"
+                        />
+                        <m:Input
+                            value="{jsonCentralModel>/Data/TopSideColorDetails/Goldsil}"
+                            editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                            class="sapUiSmallMarginBegin"
+                            maxLength="100"
+                        />
+
+                        <m:Text
+                            text="Special Col :"
+                            class="sapUiMediumMarginBegin"
+                        />
+                        <m:Input
+                            value="{jsonCentralModel>/Data/TopSideColorDetails/Speclcol}"
+                            editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                            maxLength="100"
+                            class="sapUiSmallMarginBegin"
+                        />
+                    </m:HBox>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

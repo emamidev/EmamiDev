@@ -1,0 +1,111 @@
+<mvc:View
+    controllerName="com.emami.spc.controller.RMEditDisplay"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    height="100%"
+>
+    <ObjectPageLayout
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        showFooter="true"
+    >
+        <headerTitle>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.HomeHeaderTitle"
+                type="XML"
+            />
+        </headerTitle>
+
+        <headerContent>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMHeader"
+                type="XML"
+            />
+        </headerContent>
+
+        <sections>
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMStorageCondition"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMTable"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMRevisionLog"
+                type="XML"
+            /><core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMApprovedManufacturer"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMApprovedVendors"
+                type="XML"
+            />
+             <core:Fragment
+                fragmentName="com.emami.spc.view.fragments.RMLog"
+                type="XML"
+            />
+           
+        </sections>
+
+        <footer>
+            <m:Bar visible="{jsonCentralModel>/RawMaterial/Visible/BarVisible}" >
+                <m:contentMiddle>
+                    <m:Button
+                        text="Save"
+                        type="Emphasized"
+                        press="onPressSave"
+                         visible="{jsonCentralModel>/RawMaterial/Visible/SaveBtn}"
+                    />
+                    <m:Button
+                        text="Accept"
+                        type="Emphasized"
+                        press="onPressAccept"
+                         visible="{jsonCentralModel>/RawMaterial/Visible/AcceptBtn}"
+                    />
+                    <m:Button
+                        text="Reject"
+                        type="Emphasized"
+                        press="onPressReject"
+                        visible="{jsonCentralModel>/RawMaterial/Visible/RejectBtn}"
+                    />
+                    <m:Button
+                        text="Initiate Approval"
+                        type="Emphasized"
+                        press="onPressInitiateApproval"
+                        visible="{jsonCentralModel>/RawMaterial/Visible/InitiateBtn}"
+                    />
+                    <m:Button
+                        text="Delete"
+                        type="Reject"
+                        press="onPressDelete"
+                        visible="{jsonCentralModel>/RawMaterial/Visible/DeleteBtn}"
+                    />
+                    <m:Button
+                        text="Print"
+                        type="Emphasized"
+                        press="onPressPrint"
+                        visible="{jsonCentralModel>/RawMaterial/Visible/PrintBtn}"
+                    />
+                    <m:Button
+                        text="Create Reference"
+                        type="Emphasized"
+                        press="onPressCreateReference"
+                        visible="{jsonCentralModel>/RawMaterial/Visible/CreateReferenceBtn}"
+                    />
+                     <m:Button
+                        text="Create Task List"
+                        type="Emphasized"
+                        press="onPressCreateTaskList"
+                        visible="{jsonCentralModel>/RawMaterial/Visible/CreateTaskListBtn}"
+                    />
+                </m:contentMiddle>
+            </m:Bar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

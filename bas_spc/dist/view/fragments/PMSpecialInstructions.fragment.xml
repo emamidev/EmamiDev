@@ -1,0 +1,42 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Special Instructions"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <!-- <m:TextArea
+                                editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                                height="8rem"
+                                width="100%"
+                                value="1. Refer approved KLD/drawing and artwork along with Component specification for commerical production.&#13;2. Any change in process/specification should be informed to Emami by supplier before production and MUST take written approval from Emami. 
+&#13;3. Each supply lot should accompany COA with actual data of the lot.
+&#13;4. Shade Card-  For shade card availability at Plant before comercial supply &amp; shade revision, refer existing SOP.
+&#13;5. Packing Guidelines: SPCs are to be collated flat &amp; bundled with paper band. Such bundles are to be placed in suitable corrugated box with inner poly wrap to ensure it received in un damaged condition at our end. Box to be closed properly to avoid dust. Each box to be marked with Name of Manufacturer, Lot No., Mfg date,  Material description &amp; quantity."
+                            /> -->
+                    <!-- <m:TextArea
+                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                        height="8rem"
+                        width="100%"
+                        value="{= ${jsonCentralModel>/PackagingMaterial/Data/SpecialInstr} === '' ? '1. Refer approved KLD/drawing and artwork along with Component specification for commerical production.&#13;2. Any change in process/specification should be informed to Emami by supplier before production and MUST take written approval from Emami. 
+&#13;3. Each supply lot should accompany COA with actual data of the lot.
+&#13;4. Shade Card-  For shade card availability at Plant before comercial supply &amp; shade revision, refer existing SOP.
+&#13;5. Packing Guidelines: SPCs are to be collated flat &amp; bundled with paper band. Such bundles are to be placed in suitable corrugated box with inner poly wrap to ensure it received in un damaged condition at our end. Box to be closed properly to avoid dust. Each box to be marked with Name of Manufacturer, Lot No., Mfg date,  Material description &amp; quantity.' : ${jsonCentralModel>/PackagingMaterial/Data/SpecialInstr} }"
+                    /> -->
+
+                    <m:TextArea
+                        editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                        height="8rem"
+                        width="100%"
+                        value="{jsonCentralModel>/PackagingMaterial/Data/SpecialInstr}"
+                    />
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

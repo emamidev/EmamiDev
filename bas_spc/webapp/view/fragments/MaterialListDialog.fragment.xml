@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <TableSelectDialog items="{jsonMaterialDropdownModel>/}" noDataText="No Data" liveChange="onSearchMaterialListDialog" title="Material" confirm="onPressMaterialListDialogLineItem" contentWidth="30%">
+        <columns>
+            <Column>
+                <header>
+                    <Text text="Material Code" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="Material Description" />
+                </header>
+            </Column>
+        </columns>
+        <ColumnListItem>
+        
+            <cells>
+                <Text text="{jsonMaterialDropdownModel>Matnr}" />
+            </cells>
+            <cells>
+                <Text text="{jsonMaterialDropdownModel>Maktx}" />
+            </cells>
+        </ColumnListItem>
+    </TableSelectDialog>
+</core:FragmentDefinition>

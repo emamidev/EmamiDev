@@ -1,0 +1,66 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+
+<ObjectPageSection
+                titleUppercase="false"
+                title="Back Side Color Details"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Text text="Colour" />
+                                <m:Input
+                                     value="{jsonCentralModel>/Data/BackSideColorDetails/Color}"
+                                    editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                    maxLength="20"
+                                    class="sapUiSmallMarginBegin"
+                                />
+
+                                <m:Select
+                                    selectedKey="{jsonCentralModel>/Data/BackSideColorDetails/Polye}"
+                                    width="15rem"
+                                    class="sapUiMediumMarginBegin"
+                                    enabled="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                >
+                                    <m:items>
+                                        <core:Item
+                                            key="Poly Extruded"
+                                            text="Poly Extruded"
+                                        />
+
+                                        <core:Item
+                                            key="Aqua Varnished"
+                                            text="Aqua Varnished"
+                                        />
+                                        <core:Item
+                                            key="UV Varnished"
+                                            text="UV Varnished"
+                                        />
+                                        <core:Item
+                                            key=""
+                                            text=""
+                                        />
+                                    </m:items>
+                                </m:Select>
+
+                                <m:Text
+                                    text="Grade of Ink (if Any):"
+                                    class="sapUiMediumMarginBegin"
+                                />
+                                <m:Input
+                                    value="{jsonCentralModel>/Data/BackSideColorDetails/Grade}"
+                                    editable="{jsonCentralModel>/PackagingMaterialEditable/All}"
+                                     maxLength="30"
+                                    class="sapUiSmallMarginBegin"
+                                />
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            
+</core:FragmentDefinition>

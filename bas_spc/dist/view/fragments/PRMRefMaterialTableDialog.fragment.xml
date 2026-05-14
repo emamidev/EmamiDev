@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <TableSelectDialog items="{jsonPRMRefMaterialDropdownModel>/}" noDataText="No Data" liveChange="onSearchPRMRefMaterialTableDialog" title="Reference Material" confirm="onConfirmPRMRefMaterialTableDialog" contentWidth="40%">
+        <columns>
+            <Column>
+                <header>
+                    <Text text="Material" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="Version" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="Description" />
+                </header>
+            </Column>
+        </columns>
+        <ColumnListItem>
+        
+            <cells>
+                <Text text="{jsonPRMRefMaterialDropdownModel>Matnr}" />
+            </cells>
+             <cells>
+                <Text text="{jsonPRMRefMaterialDropdownModel>Versn}" />
+            </cells>
+            <cells>
+                <Text text="{jsonPRMRefMaterialDropdownModel>Maktx}" />
+            </cells>
+        </ColumnListItem>
+    </TableSelectDialog>
+</core:FragmentDefinition>

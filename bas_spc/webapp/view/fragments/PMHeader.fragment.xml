@@ -1,0 +1,155 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+    <m:HeaderContainer showDividers="false">
+        <m:HBox>
+            <m:VBox>
+                <m:Text
+                    text="Component Sap Code"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="SAP Description"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Detail Description"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text text="Reason for Change(If app)" />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Matnr}"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/Matnr}"
+                />
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Maktx}"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/Maktx}"
+                />
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Detdes}"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                    maxLength="100"
+                />
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Reschg}"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                    maxLength="100"
+                />
+            </m:VBox>
+
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Text
+                    text="Reference ARTWORK No."
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Reference KLD/DRW No."
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Applicable for"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text text="Revision No." />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Artwrk}"
+                    maxLength="30"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                />
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Klddrw}"
+                    maxLength="30"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                />
+                <!-- <m:Input value="{jsonCentralModel>/Data/Applcb}"  maxLength="10" editable="{jsonCentralModel>/PackagingMaterial/Editable/All}" /> -->
+                <m:Select
+                    selectedKey="{jsonCentralModel>/PackagingMaterial/Data/Applcb}"
+                    width="12rem"
+                    enabled="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                >
+                    <m:items>
+                        <core:Item
+                            key="Production"
+                            text="Production"
+                        />
+                        <core:Item
+                            key="Trial"
+                            text="Trial"
+                        />
+                        <core:Item
+                            key=""
+                            text=""
+                        />
+                    </m:items>
+                </m:Select>
+
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Versn}"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/Versn}"
+                    enabled="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                />
+            </m:VBox>
+
+            <m:VBox class="sapUiSmallMarginBegin">
+                <m:Text
+                    text="Issue Date"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Effective Date"
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <m:Text
+                    text="Superseed SAP code"
+                    class="sapUiSmallMarginBottom"
+                />
+                <m:Text
+                    text="Change control number"
+                    class="sapUiSmallMarginBottom"
+                />
+            </m:VBox>
+            <m:VBox class="sapUiSmallMarginBegin">
+
+          
+                <m:DatePicker
+                    value="{ path : 'jsonCentralModel>/PackagingMaterial/Data/IssueDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"
+                    editable="false"
+                  
+                    change="onChangePMIssueDate"
+                />
+       
+                <m:DatePicker
+                    value="{ path : 'jsonCentralModel>/PackagingMaterial/Data/EffctDate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy'}}"
+                    editable="false"
+                  
+                    change="onChangePMEffctDate"
+                />
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Supcode}"
+                    showValueHelp="true"
+                    valueHelpRequest="onSuperSeedValueHelpReq"
+                    maxLength="18"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                />
+                <m:Input
+                    value="{jsonCentralModel>/PackagingMaterial/Data/Ccnno}"
+                    editable="{jsonCentralModel>/PackagingMaterial/Editable/All}"
+                />
+            </m:VBox>
+        </m:HBox>
+    </m:HeaderContainer>
+</core:FragmentDefinition>

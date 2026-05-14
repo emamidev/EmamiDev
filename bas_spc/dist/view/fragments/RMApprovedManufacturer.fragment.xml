@@ -1,0 +1,138 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+     xmlns:ui="sap.ui.table"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Approved Vendors" 
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+                    <!-- <m:Table
+                        items="{jsonCentralModel>/RawMaterial/Data/ApprovedVendors/results}"
+                        popinLayout="GridSmall"
+                        sticky="ColumnHeaders"
+                    >
+                        <m:columns>
+                            <m:Column>
+                                <m:Text text="Sl.No" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Approved Manufacturer" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Site Plant" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Trade Name" />
+                            </m:Column>
+                            <m:Column>
+                                <m:Text text="Pack Size" />
+                            </m:Column>
+                        </m:columns>
+
+                        <m:items>
+                            <m:ColumnListItem>
+                                <m:cells>
+                                    <m:Text text="{jsonCentralModel>Posnr}" />
+                                    <m:Text text="{jsonCentralModel>Approvedmfd}" />
+                                    <m:Text text="{jsonCentralModel>Siteplant}" />
+                                    <m:Input value="{jsonCentralModel>Tradename}"  editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                                    <m:Input value="{jsonCentralModel>Packsize}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" />
+                                    
+                                </m:cells>
+                            </m:ColumnListItem>
+                        </m:items>
+                    </m:Table> -->
+                     <ui:Table
+                        rows="{jsonCentralModel>/RawMaterial/Data/ApprovedVendors/results}"
+                        selectionMode="None"
+                        paste="onPaste"
+                        ariaLabelledBy="title"
+                        visibleRowCount="5"
+                    >
+                    <ui:extension>
+                            <m:OverflowToolbar style="Clear">
+                                <m:ToolbarSpacer />
+                                <m:Button
+                                    press="onAddApprovedItem"
+                                    icon="sap-icon://add"
+                                    type="Accept"
+                                    visible="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                />
+                            </m:OverflowToolbar>
+                        </ui:extension>
+                        <ui:columns>
+                            <ui:Column width="3rem">
+                                <m:Label text="Sl." />
+                                <ui:template>
+                                    <m:Text
+                                        text="{jsonCentralModel>Posnr}"
+                                        wrapping="false"
+                                    />
+                                    <!-- <m:Input
+                                        value="{jsonCentralModel>Posnr}" editable="{jsonCentralModel>/RawMaterial/Editable/All}"
+                                    /> -->
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="25rem">
+                                <m:Label text="Approved Manufacturer" />
+                                <ui:template>
+                                    <!-- <m:Text
+                                        text="{jsonCentralModel>Approvedmfd}"
+                                        wrapping="false"
+                                    /> -->
+                                    <m:Input
+                                        value="{jsonCentralModel>Approvedmfd}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" tooltip="{jsonCentralModel>Approvedmfd}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="25rem">
+                                <m:Label text="Site Plant" />
+                                <ui:template>
+                                    <!-- <m:Text
+                                        text="{jsonCentralModel>Siteplant}"
+                                        wrapping="false"
+                                    /> -->
+                                    <m:Input
+                                        value="{jsonCentralModel>Siteplant}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" tooltip="{jsonCentralModel>Siteplant}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                             <ui:Column width="10rem">
+                                <m:Label text="Trade Name" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Tradename}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" tooltip="{jsonCentralModel>Tradename}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                             <ui:Column width="10rem">
+                                <m:Label text="Pack Size" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Packsize}" editable="{jsonCentralModel>/RawMaterial/Editable/All}" tooltip="{jsonCentralModel>Packsize}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem" visible="{jsonCentralModel>/RawMaterial/Editable/All}">
+                                <m:Label text="Remove" />
+                                <ui:template>
+                                    <m:Button
+                                        press="onDeleteApproved"
+                                        icon="sap-icon://delete"
+                                        type="Reject"
+                                        
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                        </ui:columns>
+                    </ui:Table>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

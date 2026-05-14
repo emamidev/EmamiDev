@@ -1,0 +1,190 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+    xmlns:ui="sap.ui.table"
+>
+    <ObjectPageSection
+        titleUppercase="false"
+        title="Specification Details"
+    >
+        <subSections>
+            <ObjectPageSubSection titleUppercase="false">
+                <blocks>
+        
+
+                    <ui:Table
+                        rows="{jsonCentralModel>/PerfumeMaterial/Data/PspecificationItemSet/results}"
+                        selectionMode="None"
+                        paste="onPaste"
+                        ariaLabelledBy="title"
+                        visibleRowCount="5"
+                    >
+                        <ui:extension>
+                            <m:OverflowToolbar style="Clear">
+                                <m:ToolbarSpacer />
+                                <m:Button
+                                    press="onAddSpecificationItemPR"
+                                    icon="sap-icon://add"
+                                    type="Accept"
+                                    visible="{jsonCentralModel>/PerfumeMaterial/Editable/All}"
+                                />
+                            </m:OverflowToolbar>
+                        </ui:extension>
+                        <ui:columns>
+                            <ui:Column>
+                                <m:Label text="QT" />
+                                <ui:template>
+                                    <m:CheckBox
+                                        displayOnly="true"
+                                        selected="{= ${jsonCentralModel>Quantitative} === 'X' ? true : false }"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column>
+                                <m:Label text="QL" />
+                                <ui:template>
+                                    <m:CheckBox
+                                        displayOnly="true"
+                                        selected="{= ${jsonCentralModel>Qualitative} === 'X' ? true : false }"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="10rem">
+                                <m:Label text="Tests" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Tests}"
+                                        valueHelpRequest="onTestsValueHelpReqPM"
+                                        showValueHelp="true"
+                                        tooltip="{jsonCentralModel>Tests}"
+                                        maxLength="40"
+                                        editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="10rem">
+                                <m:Label text="Specification" />
+                                <ui:template>
+                                    <m:TextArea
+                                        value="{jsonCentralModel>Specification}"
+                                        growing="true"
+                                        width="100%"
+                                        height="4rem"
+                                        tooltip="{jsonCentralModel>Specification}"
+                                        maxLength="1024"
+                                        editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="5rem">
+                                <m:Label text="ATP Ref" />
+                                <ui:template>
+                                    <m:Text
+                                        text="{jsonCentralModel>AtpReference}"
+                                        wrapping="false"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="Operator" />
+                                <ui:template>
+                                    <m:Select
+                                        width="8rem"
+                                        selectedKey="{jsonCentralModel>Operator}"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        tooltip="{jsonCentralModel>Operator}"
+                                        enabled="{jsonCentralModel>/PerfumeMaterial/Editable/All}"
+                                        change="onUOMLineitemChange"
+                                    >
+                                        <m:items>
+                                            <core:Item
+                                                key=""
+                                                text=""
+                                            />
+                                            <core:Item
+                                                key="GE"
+                                                text="Greater Than"
+                                            />
+                                            <core:Item
+                                                key="LE"
+                                                text="Less Than"
+                                            />
+                                            <core:Item
+                                                key="NLT"
+                                                text="Not Less Than"
+                                            />
+                                            <core:Item
+                                                key="NMT"
+                                                text="Not More Than"
+                                            />
+                                        </m:items>
+                                    </m:Select>
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="Low" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Lowvalue}"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        enabled="{= ${jsonCentralModel>Operator} === 'NLT' ? true : false || ${jsonCentralModel>Operator} === 'NMT' ? false : true }"
+                                        change="onUOMLineitemChange"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="High" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Uppervalue}"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        enabled="{= ${jsonCentralModel>Operator} === 'NLT' ? false : true || ${jsonCentralModel>Operator} === 'NMT' ? true : false }"
+                                        change="onUOMLineitemChange"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="6rem">
+                                <m:Label text="Uom" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Uom}"
+                                        maxLength="3"
+                                        valueHelpRequest="onUomValueHelpReqPRM"
+                                        showValueHelp="true"
+                                        editable="{= ${jsonCentralModel>Qualitative} === 'X' ? false : true }"
+                                        enabled="{jsonCentralModel>/PerfumeMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column width="8rem">
+                                <m:Label text="Frequency" />
+                                <ui:template>
+                                    <m:Input
+                                        value="{jsonCentralModel>Frequency}"
+                                        maxLength="40"
+                                        tooltip="{jsonCentralModel>Frequency}"
+                                        editable="{jsonCentralModel>/PerfumeMaterial/Editable/All}"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column
+                                width="5rem"
+                                visible="{jsonCentralModel>/PerfumeMaterial/Editable/All}"
+                            >
+                                <m:Label text="Remove" />
+                                <ui:template>
+                                    <m:Button
+                                        press="onDeleteSpecificationPRM"
+                                        icon="sap-icon://delete"
+                                        type="Reject"
+                                    />
+                                </ui:template>
+                            </ui:Column>
+                        </ui:columns>
+                    </ui:Table>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

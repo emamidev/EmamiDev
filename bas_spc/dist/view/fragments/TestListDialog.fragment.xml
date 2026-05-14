@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <TableSelectDialog items="{jsonTestListModel>/}" noDataText="No Data" liveChange="onSearchTestListDialog" title="Tests" confirm="onPressTestLineItem" contentWidth="60%">
+        <columns>
+            <Column>
+                <header>
+                    <Text text="Quantitative" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="Qualitavite" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="Tests" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="ATP Reference" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="MIC" />
+                </header>
+            </Column>
+        </columns>
+        <ColumnListItem>
+        
+            <cells>
+                <Text text="{jsonTestListModel>Quantitative}" />
+            </cells>
+            <cells>
+                <Text text="{jsonTestListModel>Qualitative}" />
+            </cells>
+             <cells>
+                <Text text="{jsonTestListModel>Tests}" />
+            </cells>
+            <cells>
+                <Text text="{jsonTestListModel>AtpReference}" />
+            </cells>
+             <cells>
+                <Text text="{jsonTestListModel>Mkmnr}" />
+            </cells>
+        </ColumnListItem>
+    </TableSelectDialog>
+</core:FragmentDefinition>

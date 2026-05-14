@@ -1,0 +1,85 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.uxap"
+>
+
+ <ObjectPageSection
+                titleUppercase="false"
+                title="7.Delivery"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:Table
+                                items="{jsonCentralModel>/Data/Delivery/results}"
+                                popinLayout="GridSmall"
+                                sticky="ColumnHeaders"
+                            >
+                                <m:columns>
+                                    <m:Column>
+                                        <m:Text text="Requirement" />
+                                    </m:Column>
+
+                                    <m:Column>
+                                        <m:Text text="Test Method" />
+                                    </m:Column>
+                                    <m:Column>
+                                        <m:Text text="Unit" />
+                                    </m:Column>
+
+                                    <m:Column>
+                                        <m:Text text="LSL" />
+                                    </m:Column>
+                                    <m:Column>
+                                        <m:Text text="Target" />
+                                    </m:Column>
+
+                                    <m:Column>
+                                        <m:Text text="USL" />
+                                    </m:Column>
+                                    <m:Column>
+                                        <m:Text
+                                            text="Release Criteria to be followed by QA to release"
+                                        />
+                                    </m:Column>
+
+                                    <m:Column>
+                                        <m:Text text="Acceptable Defect %" />
+                                    </m:Column>
+                                    <m:Column>
+                                        <m:Text text="Part of COA" />
+                                    </m:Column>
+
+                                    <m:Column>
+                                        <m:Text text="Plant testing" />
+                                    </m:Column>
+                                    <m:Column>
+                                        <m:Text text="Remarks" />
+                                    </m:Column>
+                                </m:columns>
+
+                                <m:items>
+                                    <m:ColumnListItem>
+                                        <m:cells>
+                                             <m:Text text="{jsonCentralModel>Reqmnt}" />
+                                            <m:Input value="{jsonCentralModel>Tstmth}" maxLength="30" editable="{jsonCentralModel>/PackagingMaterialEditable/All}" />
+                                            <m:Input value="{jsonCentralModel>Meins}" maxLength="3" editable="{jsonCentralModel>/PackagingMaterialEditable/All}"  />
+                                            <m:Input value="{jsonCentralModel>Lsl}" maxLength="3" editable="{jsonCentralModel>/PackagingMaterialEditable/All}"  />
+                                            <m:Input value="{jsonCentralModel>Target}" maxLength="3" editable="{jsonCentralModel>/PackagingMaterialEditable/All}"  />
+                                            <m:Input value="{jsonCentralModel>Usl}" maxLength="3" editable="{jsonCentralModel>/PackagingMaterialEditable/All}" />
+                                            <m:Input value="{jsonCentralModel>Relcri}" maxLength="100" editable="{jsonCentralModel>/PackagingMaterialEditable/All}"  />
+                                            <m:Input value="{jsonCentralModel>Accdef}" maxLength="3" editable="{jsonCentralModel>/PackagingMaterialEditable/All}" />
+                                            <m:Input value="{jsonCentralModel>Partcoa}" maxLength="5" editable="{jsonCentralModel>/PackagingMaterialEditable/All}"  />
+                                            <m:Input value="{jsonCentralModel>Planttst}" maxLength="5" editable="{jsonCentralModel>/PackagingMaterialEditable/All}"  />
+                                            <m:Input value="{jsonCentralModel>Remarks}" maxLength="250" editable="{jsonCentralModel>/PackagingMaterialEditable/All}"  />
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+</core:FragmentDefinition>
